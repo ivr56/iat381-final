@@ -8,7 +8,7 @@
 
   <div class="savedList">
     <!-- <input class="knob" data-width="250" data-cursor=true data-fgColor="#222222" data-thickness=.2 value="5"> -->
-    <input class="knob" data-width="200" data-cursor=true data-fgColor="#222222" data-thickness=.2 value="29">
+    <!-- <input class="knob" data-width="200" data-cursor=true data-fgColor="#222222" data-thickness=.2 value="29"> -->
 
 </div>
     <div class="userpanel">
@@ -19,6 +19,21 @@
     <div class="userpanel">
       <p id="displayinpt">0</p>
       </div>
+
+
+      <div ng-controller="historyCtrl">
+
+     <ul>
+       <li ng-repeat="history in histories">
+
+         <span class="done-{{todo.done}}">{{history.text}}</span>
+       </li>
+     </ul>
+     <form>
+       <input class="add-input" placeholder="" type="text" ng-model="formTodoText" ng-model-instant />
+       <button class="add-btn" ng-click="addhistory()"><h2>Add</h2></button>
+     </form>
+   </div>
 
 
     <!-- <p class="lead">

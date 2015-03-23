@@ -5,7 +5,7 @@
   <div class="jumbotron">
   <h1>History</h1>
     <div class="savedList">
-    
+
     <p>2015/05/18 2:18pm</p>
 
     <div class="col1of2">
@@ -35,21 +35,18 @@
     </div>
 
   </div>
+
   <div class="savedList">
-  <p>2015/05/18 2:18pm</p>
-
-  <div class="col1of2">
-  <h2>Canada</h2>
-  <h1>$25</h1>
-
+    <div ng-controller="GreetController">
+    Hello {{name}}!
   </div>
-  <div class="col1of2">
-  <h2>France</h2>
-  <h1>€18.46</h1>
-
+  <div ng-controller="ListController">
+    <ol>
+      <li ng-repeat="name in names">{{name}} from {{department}}</li>
+    </ol>
   </div>
 
-</div>
+  </div>
 
 
     <!-- <p class="lead">
