@@ -55,7 +55,7 @@
                         console.log("release : " + value);
                         var updatevalue= value*0.14;
                         document.getElementById("userinpt").innerHTML='¥' + value;
-                        document.getElementById("displayinpt").innerHTML='£'+ updatevalue;
+                        document.getElementById("displayinpt").innerHTML='£'+ updatevalue.toFixed(2);
 
                     },
                     cancel : function () {
