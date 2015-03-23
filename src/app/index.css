@@ -9,7 +9,7 @@
 html{
   font-family: 'Open Sans', sans-serif;
   background: url(../assets/images/bgtrial_02.png);
-
+  width:100%;
   background-repeat: no-repeat;
   background-position:center;
   -webkit-background-size: cover;
@@ -33,7 +33,7 @@ a {
 
 .container {
 
-  width: 1170px;
+  width: 96%;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -112,18 +112,20 @@ a {
 }
 .savedList h1{
   color:#C3C0C2;
-  font-size:3em;
+  font-size:2.2em;
+  text-align:left;
 
 }
 
 .savedList h2{
   color:#2595B7;
   border-bottom:10px solid #333;
-  width:30%;
+  width:90%;
   text-align:center;
-  margin-left:auto;
-  margin-right:auto;
+  /*margin-left:auto;
+  margin-right:auto;*/
   padding-bottom:10px;
+
 }
 
 .col1of2{

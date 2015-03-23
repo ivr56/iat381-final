@@ -5,74 +5,97 @@
   <div class="jumbotron">
   <h1>Globe</h1>
     <div class="savedList">
-    <p>2015/05/18 2:18pm</p>
+      <div>
 
-    <div class="col1of2">
-    <h2>Canada</h2>
-    <h1>$25</h1>
 
-    </div>
-    <div class="col1of2">
-    <h2>France</h2>
-    <h1>€18.46</h1>
+        <input class="knob" data-width="200" data-cursor=true data-fgColor="#222222" data-thickness=.2 value="29">
+
+     </div>
 
     </div>
-  </div>
 
     <div class="savedList">
-    <p>2015/05/18 2:18pm</p>
 
-    <div class="col1of2">
-    <h2>Canada</h2>
-    <h1>$25</h1>
 
-    </div>
-    <div class="col1of2">
-    <h2>France</h2>
-    <h1>€18.46</h1>
-
-    </div>
-
-  </div>
+      </div>
   <div class="savedList">
-  <p>2015/05/18 2:18pm</p>
+    <div class="userpanel">
 
-  <div class="col1of2">
-  <h2>Canada</h2>
-  <h1>$25</h1>
+     <p id="userinpt">0</p>
+     </div>
 
-  </div>
-  <div class="col1of2">
-  <h2>France</h2>
-  <h1>€18.46</h1>
-
-  </div>
-
+    <div class="userpanel">
+      <p id="displayinpt">0</p>
+      </div>
 </div>
 
 
-    <!-- <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
-    </p>
-    <p><a class="btn" ng-href="#">Splendid!</a></p> -->
   </div>
 
-  <!-- <div class="col" ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
-    <div class="thumbnail">
-      <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
-      <div class="caption">
-        <h3>{{awesomeThing.title}}</h3>
-        <p>{{awesomeThing.description}}</p>
-        <p><a ng-href="{{awesomeThing.url}}">{{awesomeThing.url}}</a></p>
-      </div>
-    </div>
-  </div> -->
 
-  <hr>
 
-  <div class="footer">
+  <script src="js/jquery.knob.js"></script>
+  <script>
+            $(function($) {
 
-  </div>
+                $(".knob").knob({
+                    change : function (value) {
+                        //console.log("change : " + value);
+                    },
+                    release : function (value) {
+                        //console.log(this.$.attr('value'));
+                        console.log("release : " + value);
+                        var updatevalue= value*0.14;
+                        document.getElementById("userinpt").innerHTML='¥' + value;
+                        document.getElementById("displayinpt").innerHTML='£'+ updatevalue;
+
+                    },
+                    cancel : function () {
+                        console.log("cancel : ", this);
+                    },
+                    format : function (value) {
+                        return '¥' + value;
+                    },
+                    draw : function () {
+
+                        // "tron" case
+                        if(this.$.data('skin') == 'tron') {
+
+                            this.cursorExt = 0.3;
+
+                            var a = this.arc(this.cv)  // Arc
+                                , pa                   // Previous arc
+                                , r = 1;
+
+                            this.g.lineWidth = this.lineWidth;
+
+                            if (this.o.displayPrevious) {
+                                pa = this.arc(this.v);
+                                this.g.beginPath();
+                                this.g.strokeStyle = this.pColor;
+                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
+                                this.g.stroke();
+                            }
+
+                            this.g.beginPath();
+                            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
+                            this.g.stroke();
+
+                            this.g.lineWidth = 2;
+                            this.g.beginPath();
+                            this.g.strokeStyle = this.o.fgColor;
+                            this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                            this.g.stroke();
+
+                            return false;
+                        }
+                    }
+                });
+
+
+            });
+        </script>
+
 
 </div>
