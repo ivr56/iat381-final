@@ -448,6 +448,7 @@ function convertbuffer()
 	console.log("Convert Enabled");
 	country_selection = country_selection + 1;
 	console.log("Sel: " + country_selection);
+	//convertcodes();
 	//Set Highlighting Two Countries
 	//highlightCountry( [countrysel, countrysel_buffer2] );
 	//Show CSS for Button 2
