@@ -2,6 +2,7 @@ var masterContainer = document.getElementById('visualization');
 
 var overlay = document.getElementById('visualization');
 
+var countrytemp;
 var countrysel;
 var countrysel_buffer;
 var countrysel_buffer2;
@@ -436,9 +437,7 @@ function animate() {
 
 function starting()
 {
-	console.log("Selection: " + country_selection);
-	countrysel_buffer = countrysel;
-	console.log("Selection: " + countrysel_buffer);
+	console.log("Selection: " + country_selection + "Code: " + countrytemp);
 	convertbuffer();
 	country_selection = country_selection + 1;
 }
@@ -447,20 +446,23 @@ function convertbuffer()
 {
 	console.log("Convert Enabled");
 	country_selection = country_selection + 1;
-	console.log("Sel: " + country_selection);
+	countrysel_buffer = countrytemp;
+	console.log("Saved to Buffer: " + "Selection: " + country_selection + " Code: " + countrysel_buffer);
 	//Set Highlighting Two Countries
 	//highlightCountry( [countrysel, countrysel_buffer2] );
 	//Show CSS for Button 2
 	//Show CSS for Turn Around Buton
 	//Hide CSS for Button Start
+	conversion_a();
 }
 
 function convert()
 {
 	//Verify Conversion Choices
-	countrysel_buffer2 = countrysel;
+	countrysel_buffer2 = countrytemp;
 	console.log("Selection 01: " + countrysel_buffer);
 	console.log("Selection 02: " + countrysel_buffer2);
+	conversion_b();
 }
 
 function render() {
@@ -548,7 +550,8 @@ function highlightCountry( countries){
 			ctx.fillStyle = fillCSS;
 			ctx.fillRect( colorIndex, 0, 1, 1 );
 		}
-
+		console.log("Code: " + selectedCountryCode);
+		countrytemp = selectedCountryCode;
 		lookupTexture.needsUpdate = true;
 }
 
