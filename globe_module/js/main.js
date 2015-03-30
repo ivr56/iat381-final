@@ -2,10 +2,20 @@ var masterContainer = document.getElementById('visualization');
 
 var overlay = document.getElementById('visualization');
 
+//Pre Buffer Storage
 var countrytemp;
+
+//Temporry Storage
+var countryset1;
 var countrysel;
+
+//Country Selection 1
 var countrysel_buffer;
+
+//Country Selection 2
 var countrysel_buffer2;
+
+//Country Selection Tracker
 var country_selection = 0;
 
 var mapIndexedImage;
@@ -183,7 +193,9 @@ function initScene() {
 	scene = new THREE.Scene();
 	scene.matrixAutoUpdate = false;
 	// scene.fog = new THREE.FogExp2( 0xBBBBBB, 0.00003 );
-
+	document.getElementById("conversion_to").innerHTML = "";
+  document.getElementById("conversion_from").innerHTML = countryset1;
+	document.getElementById("selection").innerHTML = "CANADA";
 	scene.add( new THREE.AmbientLight( 0x505050 ) );
 
 	light1 = new THREE.SpotLight( 0xeeeeee, 3 );
@@ -287,6 +299,8 @@ function initScene() {
 
 	console.log( selectableCountries );
 
+
+
 	// load geo data (country lat lons in this case)
 	console.time('loadGeoData');
 	loadGeoData( latlonData );
@@ -302,7 +316,7 @@ function initScene() {
 	buildGUI();
 
 	//selectVisualization( timeBins, '2010', ['UNITED STATES'], ['Military Weapons','Civilian Weapons', 'Ammunition'], ['Military Weapons','Civilian Weapons', 'Ammunition'] );
-	selectVisualization( timeBins, '2010', ['UNITED STATES']);
+	selectVisualization( timeBins, '2010', ['CANADA']);
 
 		// test for highlighting specific countries
 	//highlightCountry( ["UNITED STATES", "CANADA", "CHINA"] );
@@ -439,15 +453,13 @@ function starting()
 {
 	console.log("Selection: " + country_selection + "Code: " + countrytemp);
 	convertbuffer();
-	country_selection = country_selection + 1;
 }
 
 function convertbuffer()
 {
 	console.log("Convert Enabled");
-	country_selection = country_selection + 1;
 	console.log("Sel: " + country_selection);
-	//convertcodes();
+	country_selection = country_selection + 1;
 	countrysel_buffer = countrytemp;
 	console.log("Saved to Buffer: " + "Selection: " + country_selection + " Code: " + countrysel_buffer);
 	//Set Highlighting Two Countries

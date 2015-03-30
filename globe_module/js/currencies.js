@@ -528,6 +528,9 @@ var choice_b_code;
 
 
 //Check
+//document.getElementById("conversion_to").innerHTML = countrysel_buffer;
+//document.getElementById("conversion_from").innerHTML = countrysel_buffer2;
+
 function conversion_a()
 {
 
@@ -537,7 +540,12 @@ function conversion_a()
   console.log("Result: " + choice_a_code);
   console.log("JSON: " + countrysel_buffer);
 
-  //Selection 2
+
+  //Hide Previous Button Set
+  document.getElementById("startcontainer").style.display = "none";
+
+	//Show Conversion Button Set
+  document.getElementById("conversioncontainer").style.display = "block";
 
   // console.log(myJSONObject.bindings[0].ircEvent);
   //console.log(myJSONObject.bindings[0].sel);

@@ -1,0 +1,70 @@
+
+
+#startcontainer
+{
+}
+
+
+
+#prompt
+{
+  width: 90%;
+}
+
+
+.prompt_text
+{
+  color: #FFF;
+  font-size: 25px;
+
+}
+
+
+#selection
+{
+  color: #FFF;
+  font-size: 25px;
+
+}
+
+
+#startbtn
+{
+}
+
+
+
+
+
+
+#conversioncontainer
+{
+  display: none;
+}
+
+
+#convertbtn
+{
+}
+
+
+#conversion
+{
+  color: #FFF;
+  font-size: 25px;
+
+}
+
+#conversion_from
+{
+  color: #FFF;
+  font-size: 25px;
+
+}
+
+#conversion_to
+{
+  color: #FFF;
+  font-size: 25px;
+
+}

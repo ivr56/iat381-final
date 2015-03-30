@@ -292,9 +292,20 @@ function selectVisualization( linearData, year, countries){
 	previouslySelectedCountry = selectedCountry;
 	selectedCountry = countryData[countries[0].toUpperCase()];
 	console.log("Viz01: " + cName);
-
 	console.log("Highlights: " + select);
 	//Set Country HTML Element
+
+
+	if (country_selection === 0)
+	{
+		document.getElementById("selection").innerHTML = cName;
+		countryset1 = cName;
+	}
+	else if (country_selection === 1)
+	{
+		document.getElementById("conversion_to").innerHTML = cName;
+		document.getElementById("conversion_from").innerHTML = countryset1;
+	}
 
 	//Set Global Variable on Button Click
 
