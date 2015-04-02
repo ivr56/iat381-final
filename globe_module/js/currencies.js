@@ -568,3 +568,30 @@ function conversion_b()
   //console.log(myJSONObject.bindings[0].sel);
   //console.log(countrydecode.countryd[0].countrysel_buffer);
 }
+
+$.ajax({
+    url: 'http://openexchangerates.org/api/latest.json?app_id=89fb02f2756e48c5b7214ebeeaab28f7',
+    dataType: 'jsonp',
+    success: function(json) {
+      console.log("Bank Open");
+      console.log(json.rates);
+      console.log(json.base);
+      console.log("1 USD: " + json.rates.CAD + "CAD");
+        // Rates are in `json.rates`
+        // Base currency (USD) is `json.base`
+        // UNIX Timestamp when rates were collected is in `json.timestamp`
+
+        // If you're using money.js, do this:
+        fx.rates = json.rates;
+        fx.base = json.base;
+        console.log("money.js runtime");
+        console.log(fx.rates);
+        fx.settings = { from: "EUR", to: "CAD" };
+        var start = 5000;
+        var final = fx.convert(start); // 647.71034
+        var fxfrom = fx.settings.from;
+        var fxto = fx.settings.to;
+        console.log("For Converting " + start + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
+        console.log(final);
+    }
+});
