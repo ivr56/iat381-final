@@ -586,11 +586,12 @@ $.ajax({
         fx.base = json.base;
         console.log("money.js runtime");
         console.log(fx.rates);
-        fx.settings = { from: "EUR", to: "CAD" };
+        var ca = "EUR";
+        var cb = "CAD";
+        fx.settings = { from: ca, to: cb };
         var start = 5000;
         var final = fx.convert(start); // 647.71034
-        var fxfrom = fx.settings.from;
-        var fxto = fx.settings.to;
+
         console.log("For Converting " + start + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
         console.log(final);
     }
