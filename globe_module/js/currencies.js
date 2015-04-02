@@ -510,10 +510,20 @@ var currencylookuptable = {
      "ZW":"ZWC"
 };
 
+//Country Choice A
 var choice_a;
 var choice_a_code;
+
+//Country Choice B
 var choice_b;
 var choice_b_code;
+
+
+//Country Choice A - Currency
+var xefrom;
+//Country Choice B - Currency
+var xeto;
+
 // var myJSONObject = {"bindings": [
 //         {"ircEvent": "PRIVMSG", "method": "newURI", "regex": "^http://.*"},
 //         {"ircEvent": "PRIVMSG", "method": "deleteURI", "regex": "^delete.*"},
@@ -561,7 +571,9 @@ function conversion_b()
   console.log("Result 02: " + choice_b_code);
   console.log("JSON 02: " + countrysel_buffer2);
   console.log("Convert From: " + choice_a_code + "  To:  " + choice_b_code);
-
+  xefrom = choice_a_code;
+  xeto = choice_b_code;
+  converted();
   //Selection 2
 
   // console.log(myJSONObject.bindings[0].ircEvent);
@@ -586,13 +598,18 @@ $.ajax({
         fx.base = json.base;
         console.log("money.js runtime");
         console.log(fx.rates);
-        var ca = "EUR";
-        var cb = "CAD";
-        fx.settings = { from: ca, to: cb };
-        var start = 5000;
-        var final = fx.convert(start); // 647.71034
+        //xefrom = "EUR";
+        //xeto = "CAD";
 
-        console.log("For Converting " + start + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
-        console.log(final);
     }
 });
+
+function converted()
+{
+  fx.settings = { from: xefrom, to: xeto };
+  var start = 5000;
+  var final = fx.convert(start); // 647.71034
+
+  console.log("For Converting " + start + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
+  console.log(final);
+}
