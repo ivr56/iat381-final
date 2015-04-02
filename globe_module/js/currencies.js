@@ -1,5 +1,4 @@
-//JSON String
-
+//Country ISO List
 // var countrydecode = {"countryd": [
 //   {
 // //# JSON ISO code => name country list
@@ -510,19 +509,20 @@ var currencylookuptable = {
      "ZW":"ZWC"
 };
 
-//Country Choice A
+//Country Choice A Save State
 var choice_a;
 var choice_a_code;
 
-//Country Choice B
+//Country Choice B Save State
 var choice_b;
 var choice_b_code;
 
 
-//Country Choice A - Currency
+//Country Choice A - Currency Temporary Storage
 var xefrom;
-//Country Choice B - Currency
+//Country Choice B - Currency Temporary Storage
 var xeto;
+
 
 // var myJSONObject = {"bindings": [
 //         {"ircEvent": "PRIVMSG", "method": "newURI", "regex": "^http://.*"},
@@ -541,10 +541,11 @@ var xeto;
 //document.getElementById("conversion_to").innerHTML = countrysel_buffer;
 //document.getElementById("conversion_from").innerHTML = countrysel_buffer2;
 
+//Step 1
 function conversion_a()
 {
 
-  //Selection 1
+
   choice_a = countrysel_buffer;
   choice_a_code = currencylookuptable[ choice_a ];
   console.log("Result: " + choice_a_code);
@@ -562,25 +563,27 @@ function conversion_a()
   //console.log(countrydecode.countryd[0].countrysel_buffer);
 }
 
+//Step 2
 function conversion_b()
 {
 
-  //Selection 1
+
   choice_b = countrysel_buffer2;
   choice_b_code = currencylookuptable[ choice_b ];
   console.log("Result 02: " + choice_b_code);
   console.log("JSON 02: " + countrysel_buffer2);
   console.log("Convert From: " + choice_a_code + "  To:  " + choice_b_code);
+
+  //Set Temporary Storage before Swap
   xefrom = choice_a_code;
   xeto = choice_b_code;
-  converted();
-  //Selection 2
+  //Send to Bank to be Converted
+  bank();
 
-  // console.log(myJSONObject.bindings[0].ircEvent);
-  //console.log(myJSONObject.bindings[0].sel);
-  //console.log(countrydecode.countryd[0].countrysel_buffer);
+
 }
 
+//API JQuerry AJAX Call
 $.ajax({
     url: 'http://openexchangerates.org/api/latest.json?app_id=89fb02f2756e48c5b7214ebeeaab28f7',
     dataType: 'jsonp',
@@ -604,12 +607,16 @@ $.ajax({
     }
 });
 
-function converted()
+//
+function bank()
 {
+  //Set moneyJS Values
   fx.settings = { from: xefrom, to: xeto };
+  //Set Incoming Value
   var start = 5000;
+  //Retrieve Final Conversion
   var final = fx.convert(start); // 647.71034
-
+  //Validate Selection and Output
   console.log("For Converting " + start + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
   console.log(final);
 }
