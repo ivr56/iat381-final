@@ -33,7 +33,7 @@
       </div>
     </div>
 
-
+    <button onclick="save()">"Save"</button>
 </div>
 
 
@@ -43,6 +43,7 @@
 
   <script src="js/jquery.knob.js"></script>
   <script>
+
             $(function($) {
 
                 $(".knob").knob({
@@ -55,6 +56,9 @@
                         var updatevalue= value*0.14;
                         document.getElementById("userinpt").innerHTML='¥' + value;
                         document.getElementById("displayinpt").innerHTML='£'+ updatevalue.toFixed(2);
+                        outputvalue = value;
+
+
 
                     },
                     cancel : function () {
