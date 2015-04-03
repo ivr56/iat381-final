@@ -1,0 +1,28 @@
+{
+  "name": "sklad",
+  "version": "1.2.0",
+  "homepage": "https://github.com/1999/sklad",
+  "author": "Dmitry Sorin <info@staypositive.ru>",
+  "main": "sklad.js",
+  "ignore": [
+    "docs/**",
+    "tests/**"
+  ],
+  "scripts": {
+    "test": "npm test"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "_release": "1.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.2.0",
+    "commit": "876578617ca878c410ff3c40ab0af0b371b0d413"
+  },
+  "_source": "git://github.com/1999/sklad.git",
+  "_target": "~1.2.0",
+  "_originalSource": "sklad",
+  "_direct": true
+}
