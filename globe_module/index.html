@@ -6,6 +6,26 @@
 		<meta name="viewport" content="user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="globe.css">
+
+		<script type="text/javascript">
+				//The callback function executed when the location is fetched successfully.
+				function onGeoSuccess(location) {
+						console.log(location);
+						homecode = location.address.countryCode;
+						home = location.address.country;
+						console.log(homecode);
+						console.log(home)
+				}
+				//The callback function executed when the location could not be fetched.
+				function onGeoError(error) {
+						console.log(error);
+				}
+
+				window.onload = function () {
+						geolocator.locate(onGeoSuccess);
+				}
+		</script>
+
 	</head>
 
 	<body onload="start()" id="dataviz" class="">
@@ -13,6 +33,7 @@
 
 		<div id="startcontainer">
 			<button id="startbtn" onclick="starting()">"Start"</button>
+			<button id="homebtn" onclick="goHome()">"Gone Home"</button>
 			<div id="prompt"><p class="prompt_text">Your Current Country is:</p></div>
 			<div id="selection">N/A</div>
 		</div>
@@ -81,6 +102,9 @@
 		<!-- Convert Currency -->
 		<script src="../node_modules/money/money.js"></script>
 		<script src="js/currencies.js"></script>
+
+
+		<script src="../bower_components/geolocator/src/geolocator.js"></script>
 
 		<script type="x-shader/x-vertex" id="vertexshader">
 			uniform float amplitude;

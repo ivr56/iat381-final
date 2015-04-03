@@ -60,6 +60,10 @@ var selectableYears = [];
 var selectableCountries = [];
 var select = 0;
 
+// home country from geo
+var homecode;
+var home;
+
 /*
 	930100 – military weapons, and includes some light weapons and artillery as well as machine guns and assault rifles etc.
 	930190 – military firearms – eg assault rifles, machineguns (sub, light, heavy etc), combat shotguns, machine pistols etc
@@ -195,7 +199,7 @@ function initScene() {
 	// scene.fog = new THREE.FogExp2( 0xBBBBBB, 0.00003 );
 	document.getElementById("conversion_to").innerHTML = "";
   document.getElementById("conversion_from").innerHTML = countryset1;
-	document.getElementById("selection").innerHTML = "CANADA";
+	document.getElementById("selection").innerHTML = "UNITED STATES";
 	scene.add( new THREE.AmbientLight( 0x505050 ) );
 
 	light1 = new THREE.SpotLight( 0xeeeeee, 3 );
@@ -316,7 +320,7 @@ function initScene() {
 	buildGUI();
 
 	//selectVisualization( timeBins, '2010', ['UNITED STATES'], ['Military Weapons','Civilian Weapons', 'Ammunition'], ['Military Weapons','Civilian Weapons', 'Ammunition'] );
-	selectVisualization( timeBins, '2010', ['CANADA']);
+	selectVisualization( timeBins, '2010', ['UNITED STATES']);
 
 		// test for highlighting specific countries
 	//highlightCountry( ["UNITED STATES", "CANADA", "CHINA"] );
@@ -455,6 +459,7 @@ function starting()
 	convertbuffer();
 }
 
+//Save First Country to Buffer
 function convertbuffer()
 {
 	console.log("Convert Enabled");
@@ -470,6 +475,7 @@ function convertbuffer()
 	conversion_a();
 }
 
+//Save Second Country to buffer and Convert
 function convert()
 {
 	//Verify Conversion Choices
@@ -484,6 +490,16 @@ function render() {
     renderer.render( scene, camera );
 }
 
+//Geo Location for Selection 1
+function goHome()
+{
+	var homies;
+	homies = home.toUpperCase();
+	console.log("Home is: " + homies);
+	selectVisualization( timeBins, '2010', [homies]);
+}
+
+//Check Country Index
 function findCode(countryName){
 	console.log("FindCode");
 
