@@ -89,12 +89,14 @@ a {
 }
 
 .jumbotron {
-  padding: 20px 60px 60px 75px;
+  padding-top: 50px;
+ padding-left: 15%;
   margin-bottom: 30px;
   background-color:#3C3D42;
   border-radius: 6px;
   text-align: center;
   height:100%;
+  width: 70%;
 }
 
 
@@ -116,12 +118,17 @@ a {
   width:100%;
   text-align:left;
   border-bottom:1px solid #fff;
+
 }
 .savedList h1{
   color:#C3C0C2;
   font-size:2.2em;
   text-align:left;
 
+}
+
+.knobDiv{
+  padding-left: 1.5em;
 }
 
 .savedList h2{
