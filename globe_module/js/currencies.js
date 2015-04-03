@@ -614,4 +614,5 @@ function bank()
   //Validate Selection and Output
   console.log("For Converting " + start + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
   console.log(final);
+  //Page Switching
 }

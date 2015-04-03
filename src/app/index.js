@@ -3,6 +3,7 @@
 angular.module('iat381Final', ['ngAnimate', 'ngTouch', 'ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
+
       .when('/', {
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
@@ -10,6 +11,11 @@ angular.module('iat381Final', ['ngAnimate', 'ngTouch', 'ngRoute'])
 
       .when('/globe', {
         templateUrl: 'app/main/globe.html',
+        controller: 'MainCtrl'
+      })
+
+      .when('/convert', {
+        templateUrl: 'app/main/convert.html',
         controller: 'MainCtrl'
       })
 
