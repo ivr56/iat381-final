@@ -9,18 +9,13 @@ angular.module('iat381Final', ['ngAnimate', 'ngTouch', 'ngRoute'])
         controller: 'MainCtrl'
       })
 
-      .when('/globe', {
-        templateUrl: 'app/main/globe.html',
-        controller: 'MainCtrl'
-      })
-
       .when('/convert', {
-        templateUrl: 'app/main/convert.html',
+        templateUrl: 'app/convert/convert.html',
         controller: 'MainCtrl'
       })
 
        .when('/history', {
-        templateUrl: 'app/main/history.html',
+        templateUrl: 'app/history/history.html',
         controller: 'MainCtrl'
       })
 
