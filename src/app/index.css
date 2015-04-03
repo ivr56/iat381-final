@@ -17,6 +17,8 @@ html{
   -o-background-size: cover;
   background-size: cover;
   height:100%;
+  overflow: hidden;
+
 
 }
 
@@ -26,6 +28,7 @@ body {
   opacity:0.8;
   height:100%;
   color:#fff;
+  
 
 }
 
@@ -38,7 +41,6 @@ a {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
   padding-right: 15px;
   height:100%;
 }
@@ -87,13 +89,14 @@ a {
 }
 
 .jumbotron {
-  padding: 20px 60px 60px 60px;
+  padding: 20px 60px 60px 75px;
   margin-bottom: 30px;
   background-color:#3C3D42;
   border-radius: 6px;
   text-align: center;
   height:100%;
 }
+
 
 .btn {
   display: inline-block;
