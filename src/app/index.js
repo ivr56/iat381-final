@@ -19,7 +19,6 @@ angular.module('iat381Final', ['ngAnimate', 'ngTouch', 'ngRoute'])
         controller: 'MainCtrl'
       })
 
-
       .otherwise({
         redirectTo: '/'
       });
