@@ -28,6 +28,8 @@ body {
   opacity:0.8;
   height:100%;
   color:#fff;
+  overflow: hidden;
+
   
 
 }
@@ -99,6 +101,22 @@ a {
   width: 70%;
 }
 
+.jumbotronHistory{
+
+ padding-left: 15%;
+  margin-bottom: 30px;
+  background-color:#3C3D42;
+  border-radius: 6px;
+  text-align: center;
+  height:100%;
+  width: 70%;
+
+}
+
+.jumbotron p{
+  font-size: 1.3em;
+}
+
 
 .btn {
   display: inline-block;
@@ -133,8 +151,7 @@ a {
 
 .savedList h2{
   color:#2595B7;
-  border-bottom:10px solid #333;
-  width:90%;
+   width:90%;
   text-align:center;
   /*margin-left:auto;
   margin-right:auto;*/
@@ -147,6 +164,20 @@ a {
   float:left;
   text-align:center;
 }
+
+.col1of2 h1{
+ font-size: 1.8em;
+ padding-left: 10px;
+ margin-top: 0;
+}
+
+.col1of2 h2{
+ 
+ margin-bottom: 0;
+}
+
+
+
 
 .col {
   float: left;
@@ -179,3 +210,5 @@ a {
 hr {
   clear: both;
 }
+
+
