@@ -2,10 +2,13 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="app/globe/globestyle.css">
 	<link rel="stylesheet" type="text/css" href="app/globe/globe.css">
+
+
+
 </head>
 <!--
 	<body onload="start()" id="dataviz" class=""> -->
-	<body ng-controller="GlobeCtrl" ng-init="bang()" id="dataviz" class="">
+	<body ng-controller="GlobeCtrl" id="dataviz" class="">
 
 		<div id="startcontainer">
 			<button id="startbtn" onclick="starting()">"Start"</button>
@@ -47,7 +50,7 @@
 		<script src="../node_modules/money/money.js"></script>
 		<script src="app/globe/js/currencies.js"></script>
 
-		<script src="../bower_components/geolocator/src/geolocator.js"></script>
+
 		<script type="x-shader/x-vertex" id="vertexshader">
 			uniform float amplitude;
 			attribute float size;

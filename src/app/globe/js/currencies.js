@@ -582,6 +582,7 @@ function conversion_b()
 //Bank calling Money.js Library
 function bank()
 {
+  console.log("Welcome to World Bank");
   //Set moneyJS Values
   fx.settings = { from: xefrom, to: xeto };
   //Set Incoming Value

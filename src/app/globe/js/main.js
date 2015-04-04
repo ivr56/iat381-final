@@ -125,40 +125,68 @@ var assetList = [];
 //	don't look at me I'm ugly
 function start( e ){
 	console.log("Start E");
-
-
-}
-
-
-if ( ! Detector.webgl ) {
-	Detector.addGetWebGLMessage();
-}
-else{
-	console.log("Start");
-	//	ensure the map images are loaded first!!
-	mapIndexedImage = new Image();
-	mapIndexedImage.src = 'app/globe/images/map_indexed.png';
-	mapIndexedImage.onload = function() {
-		mapOutlineImage = new Image();
-		mapOutlineImage.src = 'app/globe/images/map_outline.png';
-		mapOutlineImage.onload = function(){
-			loadCountryCodes(
-				function(){
-					loadWorldPins(
-						function(){
-							loadContentData(
-								function(){
-									initScene();
-									animate();
-								}
-							);
-						}
-					);
-				}
-			);
+	if ( ! Detector.webgl ) {
+		Detector.addGetWebGLMessage();
+	}
+	else{
+		console.log("Start");
+		//	ensure the map images are loaded first!!
+		mapIndexedImage = new Image();
+		mapIndexedImage.src = 'app/globe/images/map_indexed.png';
+		mapIndexedImage.onload = function() {
+			mapOutlineImage = new Image();
+			mapOutlineImage.src = 'app/globe/images/map_outline.png';
+			mapOutlineImage.onload = function(){
+				loadCountryCodes(
+					function(){
+						loadWorldPins(
+							function(){
+								loadContentData(
+									function(){
+										initScene();
+										animate();
+									}
+								);
+							}
+						);
+					}
+				);
+			};
 		};
 	};
-};
+
+}
+
+
+// if ( ! Detector.webgl ) {
+// 	Detector.addGetWebGLMessage();
+// }
+// else{
+// 	console.log("Start");
+// 	//	ensure the map images are loaded first!!
+// 	mapIndexedImage = new Image();
+// 	mapIndexedImage.src = 'app/globe/images/map_indexed.png';
+// 	mapIndexedImage.onload = function() {
+// 		mapOutlineImage = new Image();
+// 		mapOutlineImage.src = 'app/globe/images/map_outline.png';
+// 		mapOutlineImage.onload = function(){
+// 			loadCountryCodes(
+// 				function(){
+// 					loadWorldPins(
+// 						function(){
+// 							loadContentData(
+// 								function(){
+// 									initScene();
+// 									animate();
+// 								}
+// 							);
+// 						}
+// 					);
+// 				}
+// 			);
+// 		};
+// 	};
+// };
 
 
 
@@ -312,8 +340,8 @@ function initScene() {
 	}
 
 	console.log( selectableCountries );
-	selectedYear = '2010';
-	selectedCountry = 'UNITED STATES';
+	// selectedYear = '2010';
+	// selectedCountry = 'UNITED STATES';
 	console.log("S: " + selectedCountry);
 
 	// load geo data (country lat lons in this case)
