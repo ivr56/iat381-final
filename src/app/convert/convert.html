@@ -16,7 +16,7 @@
 
   <div class="savedList">
 
-    <p>Spin the dial to select the conversion amount</p>
+   <!-- <p>Spin the dial to select the conversion amount</p> -->
     <div class="col1of2">
     <div class="userpanel">
 
@@ -26,14 +26,20 @@
      </div>
 
    </div>
+
    <div class="col1of2">
      <h2>FRANCE</h2>
     <div class="userpanel">
       <p id="displayinpt">0</p>
       </div>
     </div>
+    <div id="description" input='text'>Test</div>
+     <button  onclick="save()">Save</button>
 
-    <button onclick="save()">"Save"</button>
+   <ul id='list'>
+   </ul>
+
+
 </div>
 
 
@@ -42,6 +48,10 @@
 
 
   <script src="js/jquery.knob.js"></script>
+  <script src="js/zepto.js"></script>
+  <script src="js/script.js"></script>
+  <script src="../bower_components/sklad/sklad.js"></script>
+
   <script>
 
             $(function($) {
@@ -57,6 +67,7 @@
                         document.getElementById("userinpt").innerHTML='¥' + value;
                         document.getElementById("displayinpt").innerHTML='£'+ updatevalue.toFixed(2);
                         outputvalue = value;
+                        outputvalue2 = updatevalue;
 
 
 

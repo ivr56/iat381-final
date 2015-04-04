@@ -6,10 +6,7 @@ sklad.open(dbName, {
   migration: {
     '1': function (database) {
       var objStore = database.createObjectStore('todos', {autoIncrement: true});
-      objStore.createIndex('description_search', 'description', {unique: false});
-      objStore.createIndex('fromname_search', 'fromCountryName');
-      objStore.createIndex('toname_search', 'toCountryName');
-      objStore.createIndex('currencyInpt_search', 'amount');
+      objStore.createIndex('description_search', 'description', {unique: true});
     },
     '2': function (database) {
       database.deleteObjectStore('todos');
@@ -17,19 +14,16 @@ sklad.open(dbName, {
         autoIncrement: true,
         keyPath: 'timestamp'
       });
-      objStore.createIndex('description_search', 'description', {unique: false})
+      objStore.createIndex('description_search', 'description', {unique: true})
       objStore.createIndex('done', 'done', {unique: false});
     }
   }
 },
 
 function (err, conn) {
-
   if (err) { throw err; }
   $(function () {
     var $description = $('#description');
-    var $toCountryName = $('#toCountryName');
-    var $fromCountryName = $('#fromCountryName');
     var $add         = $('#add');
     var $list        = $('#list')
 
@@ -44,8 +38,6 @@ function (err, conn) {
           $list.empty();
           data.todos.forEach(function (todo) {
             var $li = $(document.createElement('h1'));
-            var $l = $(document.createElement('h2'));
-            //if item is done
             if (todo.value.done) {
               $li.css({'display': 'none'})
             }

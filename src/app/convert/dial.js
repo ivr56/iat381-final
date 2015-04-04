@@ -1,7 +1,2 @@
 var outputvalue;
-
-function out()
-{
-  console.log("Out: " + outputvalue);
-
-}
+var outputvalue2;
