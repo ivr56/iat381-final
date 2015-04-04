@@ -121,36 +121,35 @@ var assetList = [];
 //	don't look at me I'm ugly
 function start( e ){
 	//	detect for webgl and reject everything else
-	if ( ! Detector.webgl ) {
-		Detector.addGetWebGLMessage();
-	}
-	else{
-		//	ensure the map images are loaded first!!
-		mapIndexedImage = new Image();
-		mapIndexedImage.src = 'images/map_indexed.png';
-		mapIndexedImage.onload = function() {
-			mapOutlineImage = new Image();
-			mapOutlineImage.src = 'images/map_outline.png';
-			mapOutlineImage.onload = function(){
-				loadCountryCodes(
-					function(){
-						loadWorldPins(
-							function(){
-								loadContentData(
-									function(){
-										initScene();
-										animate();
-									}
-								);
-							}
-						);
-					}
-				);
-			};
+}
+if ( ! Detector.webgl ) {
+	Detector.addGetWebGLMessage();
+}
+else{
+	//	ensure the map images are loaded first!!
+	mapIndexedImage = new Image();
+	mapIndexedImage.src = 'images/map_indexed.png';
+	mapIndexedImage.onload = function() {
+		mapOutlineImage = new Image();
+		mapOutlineImage.src = 'images/map_outline.png';
+		mapOutlineImage.onload = function(){
+			loadCountryCodes(
+				function(){
+					loadWorldPins(
+						function(){
+							loadContentData(
+								function(){
+									initScene();
+									animate();
+								}
+							);
+						}
+					);
+				}
+			);
 		};
 	};
-}
-
+};
 
 
 var Selection = function(){
@@ -562,12 +561,14 @@ function highlightCountry( countries){
 		// }
 
 		var selectedCountryCode = selectedCountry.countryCode;
-
+		console.log("selectedCountry.countryCode: " + selectedCountry.countryCode);
+		console.log("selectedCountryCode: " + selectedCountryCode);
 		for( var i in countryCodes ){
 			var countryCode = countryCodes[i];
 			var colorIndex = countryColorMap[ countryCode ];
-
+			console.log("ColorIndex: " + colorIndex);
 			var mapColor = countryData[countries[i]].mapColor;
+			console.log("mapColor: " + mapColor);
 			// var fillCSS = '#ff0000';
 			var fillCSS = '#333333';
 			if( countryCode === selectedCountryCode )

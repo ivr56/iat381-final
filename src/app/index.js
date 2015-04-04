@@ -5,7 +5,7 @@ angular.module('iat381Final', ['ngAnimate', 'ngTouch', 'ngRoute'])
     $routeProvider
 
       .when('/', {
-        templateUrl: 'app/main/main.html',
+        templateUrl: 'app/globe/globe.html',
         controller: 'MainCtrl'
       })
 
@@ -22,9 +22,8 @@ angular.module('iat381Final', ['ngAnimate', 'ngTouch', 'ngRoute'])
       .otherwise({
         redirectTo: '/'
       });
-  })
-;
-// 
+  });
+
 //
 // function historyCtrl($scope) {
 //
