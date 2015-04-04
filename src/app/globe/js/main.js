@@ -1,4 +1,7 @@
 
+
+
+
 var masterContainer = document.getElementById('visualization');
 
 var overlay = document.getElementById('visualization');
@@ -121,16 +124,17 @@ var assetList = [];
 //	use underscore and ".after" to load these in order
 //	don't look at me I'm ugly
 function start( e ){
-
-	//	detect for webgl and reject everything else
+	console.log("Start E");
 
 
 }
+
 
 if ( ! Detector.webgl ) {
 	Detector.addGetWebGLMessage();
 }
 else{
+	console.log("Start");
 	//	ensure the map images are loaded first!!
 	mapIndexedImage = new Image();
 	mapIndexedImage.src = 'app/globe/images/map_indexed.png';
@@ -341,7 +345,7 @@ function initScene() {
 
 	renderer.sortObjects = false;
 	renderer.generateMipmaps = false;
-
+	console.log(renderer.domElement);
 	glContainer.appendChild( renderer.domElement );
 
 
