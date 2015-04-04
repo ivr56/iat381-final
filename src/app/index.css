@@ -91,7 +91,7 @@ a {
 }
 
 .jumbotron {
-  padding-top: 50px;
+  padding-top: 10px;
  padding-left: 15%;
   margin-bottom: 30px;
   background-color:#3C3D42;
@@ -157,12 +157,27 @@ a {
   margin-right:auto;*/
   padding-bottom:10px;
 
+
 }
 
 .col1of2{
-  width:49%;
+  width:36%;
   float:left;
   text-align:center;
+}
+
+.col1of1{
+  width:100%;
+  float:left;
+  text-align:center;
+}
+
+.col1of4{
+  width:20%;
+  float:left;
+  text-align:center;
+  margin-top: 1em;
+  padding-right: 0.5em;
 }
 
 .col1of2 h1{
@@ -211,4 +226,36 @@ hr {
   clear: both;
 }
 
+#save{
+
+  margin-left: 80%;
+}
+
+#switch{
+  margin-top: 2em;
+
+}
+
+#historycol{
+
+  padding-left: 2em;
+
+}
+
+#historycol h2{
+
+  padding-left: 0.5em;
+
+}
+
+#historycol h1{
+
+  padding-left: 0;
+
+}
+
+
+.userpanel{
+  width: 100%;
+}
 

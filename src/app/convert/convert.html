@@ -2,7 +2,13 @@
 
   <div ng-include="'components/navbar/navbar.html'"></div>
 
+<a id="save" onclick="save()">
+    <img src="../src/assets/images/save.png" width="18%" height="auto"/>
+</a>
+
+
   <div class="jumbotron">
+
     <div class="savedList">
       <div class="knobDiv">
 
@@ -19,12 +25,12 @@
     <p>Spin the dial to select the conversion amount</p>
     <div class="col1of2">
     <div class="userpanel">
-
-
-      <h2>CHINA</h2>
+	<h2>CHINA</h2>
      <p id="userinpt">0</p>
      </div>
-
+	</div>
+   <div class="col1of4">
+   <img src="../src/assets/images/icons_10.png" id="swap" width="100%" height="auto"/>
    </div>
    <div class="col1of2">
      <h2>FRANCE</h2>
@@ -33,7 +39,7 @@
       </div>
     </div>
 
-    <button onclick="save()">"Save"</button>
+    
 </div>
 
 
