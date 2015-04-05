@@ -30,7 +30,7 @@ body {
   color:#fff;
   overflow: hidden;
 
-  
+
 
 }
 
@@ -113,6 +113,21 @@ a {
 
 }
 
+
+/*.jumbotronHistory p{
+  border-bottom:1px solid white;
+}*/
+
+.jumbotronHistory h1{
+  width:49%;
+  float:left;
+  text-align:center;
+}
+.jumbotronHistory h2{
+  width:49%;
+  float:left;
+  text-align:center;
+}
 .jumbotron p{
   font-size: 1.3em;
 }
@@ -136,13 +151,13 @@ a {
   width:100%;
   text-align:left;
   border-bottom:1px solid #fff;
-
+  clear:both;
 }
 .savedList h1{
   color:#C3C0C2;
   font-size:2.2em;
   text-align:left;
-
+  width:40%;
 }
 
 .knobDiv{
@@ -151,7 +166,7 @@ a {
 
 .savedList h2{
   color:#2595B7;
-   width:90%;
+   width:40%;
   text-align:center;
   /*margin-left:auto;
   margin-right:auto;*/
@@ -172,7 +187,7 @@ a {
 }
 
 .col1of2 h2{
- 
+
  margin-bottom: 0;
 }
 
@@ -210,5 +225,3 @@ a {
 hr {
   clear: both;
 }
-
-
