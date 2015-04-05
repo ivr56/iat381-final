@@ -73,6 +73,8 @@ function (err, conn) {
           {
             timestamp: Date.now(),
             description: $description.val().trim() + $toCountryName.val() + $fromCountryName.val(),
+            country: $toCountryName.val(),
+            country: $fromCountryName.val(),
             done: false
           }
         ]
