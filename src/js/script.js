@@ -6,10 +6,10 @@ sklad.open(dbName, {
   migration: {
     '1': function (database) {
       var objStore = database.createObjectStore('todos', {autoIncrement: true});
-      objStore.createIndex('description_search', 'description', {unique: false});
-      // objStore.createIndex('fromname_search', 'fromCountryName');
-      // objStore.createIndex('toname_search', 'toCountryName');
-      // objStore.createIndex('currencyInpt_search', 'amount');
+      objStore.createIndex('toCountry_search', 'toCountryName', {unique: false});
+      objStore.createIndex('inputAmount_search', 'inputAmount', {unique: false});
+      objStore.createIndex('fromCountryName_search', 'fromCountryName', {unique: false});
+      objStore.createIndex('outcomeAmount_search', 'outcomeAmount', {unique: false});
     },
     '2': function (database) {
       database.deleteObjectStore('todos');
@@ -17,7 +17,10 @@ sklad.open(dbName, {
         autoIncrement: true,
         keyPath: 'timestamp'
       });
-      objStore.createIndex('description_search', 'description', {unique: false})
+      objStore.createIndex('toCountry_search', 'toCountryName', {unique: false})
+      objStore.createIndex('inputAmount_search', 'inputAmount', {unique: false})
+      objStore.createIndex('fromCountryName_search', 'fromCountryName', {unique: false})
+      objStore.createIndex('outcomeAmount_search', 'outcomeAmount', {unique: false})
       objStore.createIndex('done', 'done', {unique: false});
     }
   }
@@ -27,29 +30,38 @@ function (err, conn) {
 
   if (err) { throw err; }
   $(function () {
-    var $description = $('#description');
     var $toCountryName = $('#toCountryName');
+    var $inputAmount = $('#inputAmount');
     var $fromCountryName = $('#fromCountryName');
+    var $outcomeAmount = $('#outcomeAmount');
     var $add         = $('#add');
     var $list        = $('#list')
 
     function updateRows(conn) {
       conn
         .get({
-          todos: {description: sklad.DESC, index: 'description_search'}
+          todos: {toCountryName: sklad.DESC, index: 'toCountryName_search'}
         }, function (err, data) {
           if (err) { return console.error(err); }
 
           // TODO: do stuff here.
           $list.empty();
           data.todos.forEach(function (todo) {
-            var $li = $(document.createElement('h1'));
+            var $firstCountry = $(document.createElement('h2'));
+            var $firstAmount = $(document.createElement('h1'));
+            var $secCountry = $(document.createElement('h2'));
+            var $secAmount = $(document.createElement('h1'));
+            var $time = $(document.createElement('p'));
             // var $l = $(document.createElement('h2'));
             //if item is done
             if (todo.value.done) {
               $li.css({'display': 'none'})
             }
-            $li.text(todo.value.description);
+            $firstCountry.text(todo.value.toCountryName);
+            $firstAmount.text(todo.value.inputAmount);
+            $secCountry.text(todo.value.fromCountryName);
+            $secAmount.text(todo.value.outcomeAmount);
+            $time.text(todo.value.timestamp);
             $li.click (function () {
               todo.value.done = true;
               conn.upsert('todos', todo.value, function (err){
@@ -57,7 +69,11 @@ function (err, conn) {
                 updateRows(conn);
               })
             });
-            $list.append($li);
+            $list.append($time);
+            $list.append($firstCountry);
+            $list.append($secCountry);
+            $list.append($firstAmount);
+            $list.append($secAmount);
           })
         });
     }
@@ -65,16 +81,17 @@ function (err, conn) {
     updateRows(conn);
 
     $add.click(function () {
-      if (!$description.val().trim()) {
+      if (!$toCountryName.val().trim()) {
         return;
       }
       conn.insert({
         todos: [
           {
             timestamp: Date.now(),
-            description: $description.val().trim() + $toCountryName.val() + $fromCountryName.val(),
-            country: $toCountryName.val(),
-            country: $fromCountryName.val(),
+            toCountryName: $toCountryName.val().trim(),
+            inputAmount: $inputAmount.val().trim(),
+            fromCountryName: $fromCountryName.val().trim(),
+            outcomeAmount: $outcomeAmount.val().trim(),
             done: false
           }
         ]
