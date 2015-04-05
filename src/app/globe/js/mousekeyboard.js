@@ -11,6 +11,26 @@ var rotateTargetX = undefined;
 var rotateTargetY = undefined;
 
 var keyboard = new THREEx.KeyboardState();
+var myElement = document.getElementById('hammertime');
+
+var mc = new Hammer.Manager(myElement);
+
+// create a pinch and rotate recognizer
+// these require 2 pointers
+var pinch = new Hammer.Pinch();
+
+// we want to detect both the same time
+
+
+// add to the Manager
+mc.add([pinch]);
+
+
+var posX=0, posY=0,
+    scale=1, last_scale,
+    last_posX=0, last_posY=0,
+    max_pos_x=0, max_pos_y=0;
+
 
 
 function onDocumentMouseMove( event ) {
@@ -45,10 +65,11 @@ function onDocumentMouseDown( event ) {
 }
 
 function onDocumentMouseUp( event ){
-	d3Graphs.zoomBtnMouseup();
+	// d3Graphs.zoomBtnMouseup();
 	dragging = false;
-	histogramPressed = false;
+	// histogramPressed = false;
 }
+
 
 function onClick( event ){
 	//	make the rest not work if the event was actually a drag style click
@@ -81,16 +102,40 @@ function onClick( event ){
 function onKeyDown( event ){
 }
 
+
+mc.on("pinchin", function(ev) {
+	console.log(ev);
+	console.log("Pinch In Raw: " + ev.deltaTime);
+	var pandelta = 0;
+	pandelta = ev.deltaTime/120;
+	console.log("Pinch In Mathed: " + pandelta);
+	handleMWheel(pandelta);
+});
+mc.on("pinchout", function(ev) {
+	console.log(ev);
+	console.log("Pinch Out Raw: " + ev.deltaTime);
+	var pandelta = 0;
+	pandelta = ev.deltaTime/120;
+	pandelta = pandelta * -1;
+	console.log("Pinch Out Mathed: " + pandelta);
+	handleMWheel(pandelta);
+});
+
 function handleMWheel( delta ) {
+	console.log("Mouse Wheel Delta: " + delta);
+	console.log("camera.scale.z: " + camera.scale.z);
 	camera.scale.z += delta * 0.1;
 	camera.scale.z = constrain( camera.scale.z, 0.7, 5.0 );
+
 }
 
 function onMouseWheel( event ){
 	var delta = 0;
 
 	if (event.wheelDelta) { /* IE/Opera. */
-	        delta = event.wheelDelta/120;
+	        console.log("onMouseWheel Event Delta: " + event.wheelDelta)
+					delta = event.wheelDelta/120;
+
 	}
 	//	firefox
 	else if( event.detail ){
@@ -98,6 +143,7 @@ function onMouseWheel( event ){
 	}
 
 	if (delta)
+	console.log("onMouseWheel: " + delta);
 	        handleMWheel(delta);
 
 	event.returnValue = false;

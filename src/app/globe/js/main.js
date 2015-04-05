@@ -26,8 +26,10 @@ var glContainer = document.getElementById( 'glContainer' );
 var isoFile = 'app/globe/country_iso3166.json';
 var latlonFile = 'app/globe/country_lat_lon.json';
 
-var camera, scene, renderer, controls;
-
+var camera;
+var scene;
+var renderer;
+var controls;
 var pinsBase, pinsBaseMat;
 var lookupCanvas
 var lookupTexture;
@@ -38,7 +40,7 @@ var rotating;
 var visualizationMesh;
 
 var mapUniforms;
-
+var cgtxt;
 //	contains the data loaded from the arms data file
 //	contains a list of years, followed by trades within that year
 //	properties for each "trade" is: e - exporter, i - importer, v - value (USD), wc - weapons code (see table)
@@ -209,6 +211,7 @@ function initScene() {
 
 	rotating = new THREE.Object3D();
 	scene.add(rotating);
+	console.log(rotating);
 
 	lookupCanvas = document.createElement('canvas');
 	lookupCanvas.width = 256;
@@ -352,14 +355,26 @@ function initScene() {
 
     //	-----------------------------------------------------------------------------
     //	Setup our camera
+		// var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+		// 				var VIEW_ANGLE = 30, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 10000;
+		// 				camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
+		// 				scene.add(camera);
+		// 				camera.position.set(0,0,0);
+		// 				camera.lookAt(scene.position);
+		// 				console.log(scene.sphere);
+
     camera = new THREE.PerspectiveCamera( 12, window.innerWidth / window.innerHeight, 1, 20000 );
 	camera.position.z = 1400;
 	camera.position.y = 0;
-	camera.lookAt(scene.width/2, scene.height/2);
+	//camera.lookAt(scene.width/2, scene.height/2);
+	camera.lookAt(rotating);
 	scene.add( camera );
 
 	var windowResize = THREEx.WindowResize(renderer, camera)
-
+	console.log(camera.position);
+	console.log(rotating.position);
+	console.log(renderer.domElement);
+	// controls = new THREE.TrackballControls( camera, renderer.domElement );
 
 }
 
@@ -432,13 +447,13 @@ function animate() {
     requestAnimationFrame( animate );
 
 
-	THREE.SceneUtils.traverseHierarchy( rotating,
-		function(mesh) {
-			if (mesh.update !== undefined) {
-				mesh.update();
-			}
-		}
-	);
+	// THREE.SceneUtils.traverseHierarchy( rotating,
+	// 	function(mesh) {
+	// 		if (mesh.update !== undefined) {
+	// 			mesh.update();
+	// 		}
+	// 	}
+	// );
 
 	// for( var i in markers ){
 	// 	var marker = markers[i];
