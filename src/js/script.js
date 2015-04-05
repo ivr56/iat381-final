@@ -7,9 +7,9 @@ sklad.open(dbName, {
     '1': function (database) {
       var objStore = database.createObjectStore('todos', {autoIncrement: true});
       objStore.createIndex('description_search', 'description', {unique: false});
-      objStore.createIndex('fromname_search', 'fromCountryName');
-      objStore.createIndex('toname_search', 'toCountryName');
-      objStore.createIndex('currencyInpt_search', 'amount');
+      // objStore.createIndex('fromname_search', 'fromCountryName');
+      // objStore.createIndex('toname_search', 'toCountryName');
+      // objStore.createIndex('currencyInpt_search', 'amount');
     },
     '2': function (database) {
       database.deleteObjectStore('todos');
@@ -44,7 +44,7 @@ function (err, conn) {
           $list.empty();
           data.todos.forEach(function (todo) {
             var $li = $(document.createElement('h1'));
-            var $l = $(document.createElement('h2'));
+            // var $l = $(document.createElement('h2'));
             //if item is done
             if (todo.value.done) {
               $li.css({'display': 'none'})
@@ -72,7 +72,7 @@ function (err, conn) {
         todos: [
           {
             timestamp: Date.now(),
-            description: $description.val().trim(),
+            description: $description.val().trim() + $toCountryName.val() + $fromCountryName.val(),
             done: false
           }
         ]
