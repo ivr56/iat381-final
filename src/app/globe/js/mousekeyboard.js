@@ -12,6 +12,7 @@ var rotateTargetY = undefined;
 
 var keyboard = new THREEx.KeyboardState();
 
+
 function onDocumentMouseMove( event ) {
 
 	pmouseX = mouseX;

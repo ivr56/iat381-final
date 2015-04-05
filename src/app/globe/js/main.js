@@ -328,6 +328,7 @@ function initScene() {
 	glContainer.appendChild( renderer.domElement );
 
 
+
     //	-----------------------------------------------------------------------------
     //	Event listeners
 	document.addEventListener( 'mousemove', onDocumentMouseMove, true );
@@ -358,6 +359,8 @@ function initScene() {
 	scene.add( camera );
 
 	var windowResize = THREEx.WindowResize(renderer, camera)
+
+
 }
 
 
@@ -422,6 +425,7 @@ function animate() {
 
 	rotating.rotation.x = rotateX;
 	rotating.rotation.y = rotateY;
+		//New
 
     render();
 
