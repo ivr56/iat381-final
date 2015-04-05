@@ -32,6 +32,9 @@ var posX=0, posY=0,
     max_pos_x=0, max_pos_y=0;
 
 
+//Take in Touch Input for Pan
+//Convert to Mouse and Send Event Emitter
+//Place in Here
 
 function onDocumentMouseMove( event ) {
 
@@ -111,6 +114,8 @@ mc.on("pinchin", function(ev) {
 	console.log("Pinch In Mathed: " + pandelta);
 	handleMWheel(pandelta);
 });
+
+//Iorn Out the Math
 mc.on("pinchout", function(ev) {
 	console.log(ev);
 	console.log("Pinch Out Raw: " + ev.deltaTime);
