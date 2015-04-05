@@ -12,29 +12,32 @@ var rotateTargetY = undefined;
 
 var keyboard = new THREEx.KeyboardState();
 var myElement = document.getElementById('hammertime');
-
 var mc = new Hammer.Manager(myElement);
+
 
 // create a pinch and rotate recognizer
 // these require 2 pointers
 var pinch = new Hammer.Pinch();
-
+var pan = new Hammer.Pan();
 // we want to detect both the same time
 
 
 // add to the Manager
-mc.add([pinch]);
+mc.add([pinch, pan]);
 
-
-var posX=0, posY=0,
-    scale=1, last_scale,
-    last_posX=0, last_posY=0,
-    max_pos_x=0, max_pos_y=0;
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 
 
 //Take in Touch Input for Pan
 //Convert to Mouse and Send Event Emitter
 //Place in Here
+
+// listen to events...
+mc.on("pan", function(ev) {
+	console.log(ev);
+	console.log("Pan");
+});
+
 
 function onDocumentMouseMove( event ) {
 
@@ -55,6 +58,8 @@ function onDocumentMouseMove( event ) {
   		}
 	}
 }
+
+
 
 function onDocumentMouseDown( event ) {
     if(event.target.className.indexOf('noMapDrag') !== -1) {
