@@ -11,79 +11,157 @@ var rotateTargetX = undefined;
 var rotateTargetY = undefined;
 
 var keyboard = new THREEx.KeyboardState();
-var myElement = document.getElementById('hammertime');
-var mc = new Hammer.Manager(myElement);
+var is_touch_device = 'ontouchstart' in document.documentElement;
+
+if (is_touch_device)
+{
+	console.log("Touches");
+	var myElement = document.getElementById('hammertime');
+	var mc = new Hammer.Manager(myElement);
 
 
-// create a pinch and rotate recognizer
-// these require 2 pointers
-var pinch = new Hammer.Pinch();
-var pan = new Hammer.Pan();
-// we want to detect both the same time
+	// create a pinch and rotate recognizer
+	// these require 2 pointers
+	var pinch = new Hammer.Pinch();
+	var pan = new Hammer.Pan();
+	// we want to detect both the same time
 
 
-// add to the Manager
-mc.add([pinch, pan]);
+	// add to the Manager
+	mc.add([pinch, pan]);
 
-mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+	mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+	//Initial Press Down
+	var touchpressX;
+	var touchpressY;
 
+	var ptouchX;
+	var ptouchY;
+	//Current Move
+	var touchX;
+	var touchY;
+	var touchDelta;
+
+	var touchclientX;
+	var touchclientY;
+
+
+	// listen to events...
+
+	//On Press
+	mc.on("panstart", function(ev) {
+		console.log(ev);
+		console.log("Pan Start");
+
+		touchX = ev.center.x;
+		touchY = ev.center.y;
+		//Simulate Mouse Down
+		//Inital Press
+		touchpressX = touchX;
+		touchpressY = touchY;
+		dragging = true;
+
+	});
+
+
+	//On Move
+	// listen to events...
+	mc.on("pan", function(ev) {
+		console.log(ev);
+		console.log("Pan Move Left");
+
+		touchDelta = ev.distance;
+		console.log("Distance: " + touchDelta);
+		//Grab Touch Movement
+		touchX = ev.center.x;
+		touchY = ev.center.y;
+
+
+		//Begin Emulation of Move
+		//onDocumentMouseMove(event
+		ptouchX = touchX;
+		ptouchY = touchY;
+
+		touchclientX = ev.pointers[0].clientX;
+		touchclientY = ev.pointers[0].clientY;
+		//console.log("Window X: " + touchclientX + "vs Mouse X: " + touchX);
+		//console.log("Window Y: " + touchclientY + "vs Mouse Y: " + touchY);
+
+		touchX = touchclientX - window.innerWidth * 0.5;
+		touchY = touchclientY - window.innerHeight * 0.5;
+
+		rotateVY += (touchY) / 2 * Math.PI / 180 * 0.3;
+		rotateVX += (touchX) / 2 * Math.PI / 180 * 0.3;
+
+
+	});
+
+
+	//On End of Events
+	mc.on("panend", function(ev) {
+		console.log(ev);
+		console.log("Pan End");
+		//Stop Drag
+		dragging = false;
+	});
+
+
+	mc.on("pinchout", function(ev) {
+		console.log(ev);
+		console.log("Pinch Out Raw: " + ev.deltaTime);
+		var pandelta = 0;
+		pandelta = ev.deltaTime/120;
+		console.log("Pinch Out Mathed: " + pandelta);
+		handleMWheel(pandelta);
+	});
+
+	//Iorn Out the Math
+	mc.on("pinchin", function(ev) {
+		console.log(ev);
+		console.log("Pinch In Raw: " + ev.deltaTime);
+		var pandelta = 0;
+		pandelta = ev.deltaTime/120;
+		pandelta = pandelta * -1;
+		console.log("Pinch In Mathed: " + pandelta);
+		handleMWheel(pandelta);
+	});
+
+
+}
 
 //Take in Touch Input for Pan
 //Convert to Mouse and Send Event Emitter
 //Place in Here
 
-//Initial Press Down
-var touchpressX;
-var touchpressY;
-
-//Current Move
-var touchX;
-var touchY;
-
-
-
-
-// listen to events...
-
-//On Press
-mc.on("panstart", function(ev) {
-	console.log(ev);
-	console.log("Pan Start");
-
-	//Simulate Mouse Down
-	//Inital Press
-});
-
-
-//On Move
-// listen to events...
-mc.on("panmove", function(ev) {
-	console.log(ev);
-	console.log("Pan Move");
-});
-
-//On End of Events
-mc.on("panend", function(ev) {
-	console.log(ev);
-	console.log("Pan End");
-});
 
 function onDocumentMouseMove( event ) {
+	console.log("onDocumentMouseMove");
 
 	pmouseX = mouseX;
 	pmouseY = mouseY;
-
+	//console.log("Window X: " + event.clientX + " - vs Mouse X: " + mouseX);
+	//console.log("Window Y: " + event.clientY + " - vs Mouse Y: " + mouseY);
+	console.log(event);
+	console.log("MouseX: " + mouseX);
+	console.log("PMouseX: " + pmouseX);
+	console.log("WindowWidth: " + window.innerWidth);
+	console.log("EventX: " + event.clientX);
 	mouseX = event.clientX - window.innerWidth * 0.5;
 	mouseY = event.clientY - window.innerHeight * 0.5;
+	console.log("MouseX: " + mouseX);
 
 	if(dragging){
 		if(keyboard.pressed("shift") == false){
-			rotateVY += (mouseX - pmouseX) / 2 * Math.PI / 180 * 0.3;
+
+			  rotateVY += (mouseX - pmouseX) / 2 * Math.PI / 180 * 0.3;
   			rotateVX += (mouseY - pmouseY) / 2 * Math.PI / 180 * 0.3;
+
   		}
   		else{
   			camera.position.x -= (mouseX - pmouseX) * .5;
   			camera.position.y += (mouseY - pmouseY) * .5;
+				//console.log("camera.position.x: " + camera.position.x);
+				//console.log("camera.position.y: " + camera.position.y);
   		}
 	}
 }
@@ -94,13 +172,14 @@ function onDocumentMouseDown( event ) {
     if(event.target.className.indexOf('noMapDrag') !== -1) {
         return;
     }
-
+		console.log("onDocumentMouseDown");
 		//Capture Initial Position on Mouse Down
     dragging = true;
     pressX = mouseX;
     pressY = mouseY;
     rotateTargetX = undefined;
     rotateTargetX = undefined;
+		console.log(pressX + " " + pressY);
 }
 
 function onDocumentMouseUp( event ){
@@ -141,26 +220,6 @@ function onClick( event ){
 function onKeyDown( event ){
 }
 
-
-mc.on("pinchin", function(ev) {
-	console.log(ev);
-	console.log("Pinch In Raw: " + ev.deltaTime);
-	var pandelta = 0;
-	pandelta = ev.deltaTime/120;
-	console.log("Pinch In Mathed: " + pandelta);
-	handleMWheel(pandelta);
-});
-
-//Iorn Out the Math
-mc.on("pinchout", function(ev) {
-	console.log(ev);
-	console.log("Pinch Out Raw: " + ev.deltaTime);
-	var pandelta = 0;
-	pandelta = ev.deltaTime/120;
-	pandelta = pandelta * -1;
-	console.log("Pinch Out Mathed: " + pandelta);
-	handleMWheel(pandelta);
-});
 
 function handleMWheel( delta ) {
 	console.log("Mouse Wheel Delta: " + delta);
