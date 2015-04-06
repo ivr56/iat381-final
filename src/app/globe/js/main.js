@@ -4,17 +4,20 @@ var overlay = document.getElementById('visualization');
 
 //Pre Buffer Storage
 var countrytemp;
-
+var countrytemp_name;
 //Temporry Storage
 var countryset1;
 var countrysel;
 
-//Country Selection 1
+//Country Selection 1 Code
 var countrysel_buffer;
-
-//Country Selection 2
+//Country Selection 2 Code
 var countrysel_buffer2;
 
+var countrysel_buffer_name;
+var countrysel_buffer2_name;
+var countrysel_buffer_currency;
+var countrysel_buffer2_currency;
 
 var mapIndexedImage;
 var mapOutlineImage;
@@ -466,7 +469,8 @@ function starting()
 {
 	console.log("Selection: " + countrytemp);
 	countrysel_buffer = countrytemp;
-	console.log("Selection: " + countrysel_buffer);
+	countrysel_buffer_name = countrytemp_name;
+	console.log("Selection Code: " + countrysel_buffer + " Name:" + countrysel_buffer_name);
 	convertbuffer();
 
 }
@@ -489,8 +493,7 @@ function convert()
 {
 	//Verify Conversion Choices
 	countrysel_buffer2 = countrytemp;
-	console.log("Selection 01: " + countrysel_buffer);
-	console.log("Selection 02: " + countrysel_buffer2);
+	countrysel_buffer2_name = countrytemp_name;
 	conversion_b();
 }
 
@@ -541,6 +544,7 @@ function highlightCountry( countries){
 	//console.log("Highlight Country");
 
 	console.log("Highlight Country: " + countries);
+	countrytemp_name = countries;
 	var countryCodes = [];
 	for( var i in countries ){
 		var code = findCode(countries[i]);

@@ -562,13 +562,20 @@ function conversion_b()
   choice_b = countrysel_buffer2;
   choice_b_code = currencylookuptable[ choice_b ];
   console.log("Result for Selection 2: " + choice_b);
-  console.log("Currency Look Up for Selection 2: " + choice_b_code)
+  console.log("Currency Look Up for Selection 2: " + choice_b_code);
+  console.log("Selection 01 Code: " + countrysel_buffer + " Selection 01 Name: " + countrysel_buffer_name);
+  console.log("Selection 02 Code: " + countrysel_buffer2  + " Selection 02 Name: " + countrysel_buffer2_name);
   console.log("Convert From: " + choice_a_code + "  To:  " + choice_b_code);
+
+
+
 
   //Set Temporary Storage before Swap
   xefrom = choice_a_code;
   xeto = choice_b_code;
   //Send to Bank to be Converted
+
+
   bank();
 
 
@@ -612,3 +619,13 @@ function bank()
   console.log(final);
   //Page Switching
 }
+
+
+//Country Code Selection 1: countrysel_buffer
+//Country Code Selection 2: countrysel_buffer
+//Country Name Selection 1: countrysel_buffer_name;
+//Country Name Selection 2: countrysel_buffer2_name;
+//Country Currency Code Selection 1: xefrom;
+//Country Currency Code Selection 2: xeto;
+//Input Value: start;
+//Result Value: (Country 1) start (Country 2) final
