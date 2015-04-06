@@ -35,7 +35,7 @@ function (err, conn) {
     var $fromCountryName = $('#fromCountryName');
     var $outcomeAmount = $('#outcomeAmount');
     var $add         = $('#add');
-    var $list        = $('#list')
+    var $list        = $('#list');
 
     function updateRows(conn) {
       conn
