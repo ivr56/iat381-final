@@ -42,11 +42,18 @@
       <p id="displayinpt">0</p>
       </div>
     </div>
+
+    <div class="col1of2">
+    <div class="userpanel">
+
+     <p id="userinpt">0</p>
+     </div>
+	</div>
     <!-- <div id="description" input='text'></div> -->
-    <input type='text' id='description'>
+    <!-- <input type='text' id='description'>
    <input type='text' id='inputAmount'>
    <input type='text' id='fromCountryName'>
-   <input type='text' id='outcomeAmount'>
+   <input type='text' id='outcomeAmount'> -->
      <!-- <button  onclick="save()" >Save</button> -->
 
    <!-- <ul id='list'>
@@ -71,9 +78,6 @@
             $(function($) {
 
                 $(".knob").knob({
-                  bank();
-                  document.getElementById("inCount").innerHTML= countrysel_buffer_name;
-                  document.getElementById("outCount").innerHTML= countrysel_buffer2_name;
 
                     change : function (value) {
                         //console.log("change : " + value);
@@ -82,8 +86,8 @@
                         //console.log(this.$.attr('value'));
                         console.log("release : " + value);
                         var updatevalue= value*0.14;
-                        document.getElementById("userinpt").innerHTML='¥' + value;
-                        document.getElementById("displayinpt").innerHTML='£'+ updatevalue.toFixed(2);
+                        // document.getElementById("userinpt").innerHTML='¥' + value;
+                        // document.getElementById("displayinpt").innerHTML='£'+ updatevalue.toFixed(2);
                         resultvalue = value;
                         outputvalue = value;
                         outputvalue2 = updatevalue;
@@ -94,6 +98,10 @@
                         console.log("Input Country 1: " + resultvalue + " OutPut Country 2: " + final);
                         console.log("Input Country 1 Name: " + countrysel_buffer_name + "  Code: " + countrysel_buffer + "  Currency: " + xefrom);
                         console.log("Input Country 2 Name: " + countrysel_buffer2_name + "  Code: " + countrysel_buffer2 + "  Currency: " + xeto);
+                        document.getElementById("inCount").innerHTML= countrysel_buffer_name;
+                        document.getElementById("outCount").innerHTML= countrysel_buffer2_name;
+                        document.getElementById("userinpt").innerHTML=value + ' ' + xefrom;
+                        document.getElementById("displayinpt").innerHTML=final.toFixed(2) + ' ' + xeto;
 
 
 
@@ -102,7 +110,7 @@
                         console.log("cancel : ", this);
                     },
                     format : function (value) {
-                        return '¥' + value;
+                        return value;
                     },
                     draw : function () {
 

@@ -159,7 +159,16 @@ a {
   text-align:left;
   width:40%;
 }
-
+#inCount{
+  font-size:0.8em;
+  height:4em;
+  color: #2595B7;
+}
+#outCount{
+  font-size:0.8em;
+  height:4em;
+  color: #2595B7;
+}
 .knobDiv{
   padding-left: 1.5em;
 }
