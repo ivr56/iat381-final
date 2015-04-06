@@ -859,17 +859,17 @@ $.ajax({
     }
 });
 
-
+var final;
 
 //Bank calling Money.js Library
 function bank()
 {
   //Set moneyJS Values
-  startvalue = 5000;
+  startvalue = resultvalue;
   fx.settings = { from: xefrom, to: xeto };
   //Set Incoming Value
   //Retrieve Final Conversion
-  var final = fx.convert(startvalue); // 647.71034
+  final = fx.convert(startvalue); // 647.71034
   //Validate Selection and Output
   console.log("For Converting " + startvalue + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
   console.log(final);
@@ -878,7 +878,7 @@ function bank()
 
 
 //Country Code Selection 1: countrysel_buffer
-//Country Code Selection 2: countrysel_buffer
+//Country Code Selection 2: countrysel_buffer2
 //Country Name Selection 1: countrysel_buffer_name;
 //Country Name Selection 2: countrysel_buffer2_name;
 //Country Currency Code Selection 1: xefrom;
