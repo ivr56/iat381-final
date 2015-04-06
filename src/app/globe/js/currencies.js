@@ -605,13 +605,15 @@ $.ajax({
     }
 });
 
+
+
 //Bank calling Money.js Library
 function bank()
 {
   //Set moneyJS Values
+  var start = 5000;
   fx.settings = { from: xefrom, to: xeto };
   //Set Incoming Value
-  var start = 5000;
   //Retrieve Final Conversion
   var final = fx.convert(start); // 647.71034
   //Validate Selection and Output

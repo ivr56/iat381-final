@@ -141,14 +141,14 @@ function onDocumentMouseMove( event ) {
 	pmouseY = mouseY;
 	//console.log("Window X: " + event.clientX + " - vs Mouse X: " + mouseX);
 	//console.log("Window Y: " + event.clientY + " - vs Mouse Y: " + mouseY);
-	console.log(event);
-	console.log("MouseX: " + mouseX);
-	console.log("PMouseX: " + pmouseX);
-	console.log("WindowWidth: " + window.innerWidth);
-	console.log("EventX: " + event.clientX);
+	// console.log(event);
+	// console.log("MouseX: " + mouseX);
+	// console.log("PMouseX: " + pmouseX);
+	//console.log("WindowWidth: " + window.innerWidth);
+	// console.log("EventX: " + event.clientX);
 	mouseX = event.clientX - window.innerWidth * 0.5;
 	mouseY = event.clientY - window.innerHeight * 0.5;
-	console.log("MouseX: " + mouseX);
+	// console.log("MouseX: " + mouseX);
 
 	if(dragging){
 		if(keyboard.pressed("shift") == false){
@@ -172,7 +172,7 @@ function onDocumentMouseDown( event ) {
     if(event.target.className.indexOf('noMapDrag') !== -1) {
         return;
     }
-		console.log("onDocumentMouseDown");
+		//console.log("onDocumentMouseDown");
 		//Capture Initial Position on Mouse Down
     dragging = true;
     pressX = mouseX;
