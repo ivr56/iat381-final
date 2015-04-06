@@ -9,6 +9,11 @@ angular.module('iat381Final', ['ngAnimate', 'ngTouch', 'ngRoute'])
         controller: 'GlobeCtrl'
       })
 
+      // .when('/globe', {
+      //   templateUrl: 'app/globe/index.html',
+      //   controller: 'GlobeCtrl'
+      // })
+
       .when('/convert', {
         templateUrl: 'app/convert/convert.html',
         controller: 'MainCtrl'
