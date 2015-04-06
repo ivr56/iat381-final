@@ -32,12 +32,41 @@ mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 //Convert to Mouse and Send Event Emitter
 //Place in Here
 
+//Initial Press Down
+var touchpressX;
+var touchpressY;
+
+//Current Move
+var touchX;
+var touchY;
+
+
+
+
 // listen to events...
-mc.on("pan", function(ev) {
+
+//On Press
+mc.on("panstart", function(ev) {
 	console.log(ev);
-	console.log("Pan");
+	console.log("Pan Start");
+
+	//Simulate Mouse Down
+	//Inital Press
 });
 
+
+//On Move
+// listen to events...
+mc.on("panmove", function(ev) {
+	console.log(ev);
+	console.log("Pan Move");
+});
+
+//On End of Events
+mc.on("panend", function(ev) {
+	console.log(ev);
+	console.log("Pan End");
+});
 
 function onDocumentMouseMove( event ) {
 
@@ -65,6 +94,8 @@ function onDocumentMouseDown( event ) {
     if(event.target.className.indexOf('noMapDrag') !== -1) {
         return;
     }
+
+		//Capture Initial Position on Mouse Down
     dragging = true;
     pressX = mouseX;
     pressY = mouseY;
