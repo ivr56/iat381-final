@@ -8,12 +8,15 @@ var countrytemp_name;
 //Temporry Storage
 var countryset1;
 var countrysel;
-
+var startvalue;
 //Country Selection 1 Code
 var countrysel_buffer;
 //Country Selection 2 Code
 var countrysel_buffer2;
 
+
+//Home country by geo
+var home;
 var countrysel_buffer_name;
 var countrysel_buffer2_name;
 var countrysel_buffer_currency;

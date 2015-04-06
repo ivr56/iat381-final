@@ -611,13 +611,13 @@ $.ajax({
 function bank()
 {
   //Set moneyJS Values
-  var start = 5000;
+  startvalue = 5000;
   fx.settings = { from: xefrom, to: xeto };
   //Set Incoming Value
   //Retrieve Final Conversion
-  var final = fx.convert(start); // 647.71034
+  var final = fx.convert(startvalue); // 647.71034
   //Validate Selection and Output
-  console.log("For Converting " + start + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
+  console.log("For Converting " + startvalue + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
   console.log(final);
   //Page Switching
 }
