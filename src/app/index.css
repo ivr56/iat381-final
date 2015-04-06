@@ -91,7 +91,7 @@ a {
 }
 
 .jumbotron {
-  padding-top: 50px;
+  padding-top: 10px;
  padding-left: 15%;
   margin-bottom: 30px;
   background-color:#3C3D42;
@@ -172,12 +172,27 @@ a {
   margin-right:auto;*/
   padding-bottom:10px;
 
+
 }
 
 .col1of2{
-  width:49%;
+  width:36%;
   float:left;
   text-align:center;
+}
+
+.col1of1{
+  width:100%;
+  float:left;
+  text-align:center;
+}
+
+.col1of4{
+  width:20%;
+  float:left;
+  text-align:center;
+  margin-top: 1em;
+  padding-right: 0.5em;
 }
 
 .col1of2 h1{
@@ -224,4 +239,96 @@ a {
 
 hr {
   clear: both;
+}
+
+
+.save {
+
+  margin-left: 80%;
+}
+
+
+
+#switch{
+  margin-top: 2em;
+
+}
+
+#historycol{
+
+  padding-left: 2em;
+
+}
+
+#historycol h2{
+
+  padding-left: 0.5em;
+
+}
+
+#historycol h1{
+
+  padding-left: 0;
+
+}
+
+
+.userpanel{
+  width: 100%;
+}
+
+
+.landingContainer{
+
+  border-bottom: white 1px solid;
+  margin-top: 21em;
+  width: 80%;
+  margin-left: 10%;
+
+}
+
+.landingContainer p{
+
+  text-align: center;
+  margin-bottom: 0.5em;
+
+}
+
+
+.landingContainer h2{
+
+    color:#2595B7;
+    text-align: left;
+    display: inline-block;
+    margin-left: 30%;
+    margin-top: 0;
+    border-bottom: rgba(0,0,0,0.5) 6px solid;
+    vertical-align: top;
+
+
+
+}
+
+.landingContainer img{
+display: inline-block;
+
+
+}
+
+.landingButton p{
+
+  color: #fff;
+  margin: 0.5em;
+  text-align: center;
+}
+
+.landingButton {
+
+margin-top: 1.5em;
+margin-bottom: 1em;
+border: 2px solid white;
+border-radius: 10px;
+width:40%;
+margin-left: 30%;
+
 }
