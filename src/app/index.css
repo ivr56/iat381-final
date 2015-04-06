@@ -177,15 +177,25 @@ a {
 
 .col1of2{
   width:36%;
+
   float:left;
   text-align:center;
 }
 
 .col1of1{
   width:100%;
+
   float:left;
   text-align:center;
 }
+
+
+.col1of1{
+  width:100%;
+  float:left;
+  text-align:center;
+}
+
 
 .col1of4{
   width:20%;
@@ -242,7 +252,9 @@ hr {
 }
 
 
+
 .save {
+
 
   margin-left: 80%;
 }
@@ -311,7 +323,6 @@ hr {
 
 .landingContainer img{
 display: inline-block;
-
 
 }
 
