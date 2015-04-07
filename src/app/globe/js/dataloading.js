@@ -41,6 +41,7 @@ function loadContentData(callback){
 			if(callback)
 				callback();
 	    	console.log("finished read data file");
+				makeitrain();
 	    }
 	};
 	xhr.send( null );

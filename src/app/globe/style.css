@@ -71,6 +71,7 @@ li { list-style-type:none; }
     display:block;
     float:left;
  /*   min-width:1280px;*/
+ /*  Visibility ;*/
 }
 
 #visualization{

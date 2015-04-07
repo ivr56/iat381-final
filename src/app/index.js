@@ -1,4 +1,5 @@
 'use strict';
+var pageready = 0;
 
 angular.module('iat381Final', ['ngAnimate', 'ngTouch', 'ngRoute'])
   .config(function ($routeProvider) {
@@ -73,3 +74,10 @@ angular.module('toDo',[])
 })
 
 ;
+
+
+function makeitrain()
+{
+  console.log("Page Ready");
+
+}

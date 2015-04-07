@@ -855,6 +855,7 @@ $.ajax({
         console.log(fx.rates);
         //xefrom = "EUR";
         //xeto = "CAD";
+        console.log("Page Ready");
 
     }
 });
@@ -874,6 +875,7 @@ function bank()
   console.log("For Converting " + startvalue + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
   console.log(final);
   //Page Switching
+  
 }
 
 
