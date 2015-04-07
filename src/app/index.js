@@ -6,8 +6,8 @@ angular.module('iat381Final', ['ngAnimate', 'ngTouch', 'ngRoute'])
     $routeProvider
 
       .when('/', {
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'app/globe/index.html',
+        controller: 'GlobeCtrl'
       })
 
       .when('/globe', {
