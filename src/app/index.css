@@ -345,6 +345,19 @@ hr {
 
 }
 
+#saved {
+  display:none;
+  z-index:5;
+  position:absolute;
+
+  top:55px;
+
+
+}
+#saved img{
+  float:right;
+  padding-right:8px;
+}
 
 .userpanel{
   width: 100%;

@@ -4,10 +4,12 @@
 
 <div class="convertContainer">
 
-<a class="save" onclick="save()" id='add'>
+<a class="save" onclick="toggle_visibility('saved');" id='add'>
 
-    <img src="../src/assets/images/save.png" width="18%" height="auto"/>
+    <span><img src="../src/assets/images/save.png" width="18%" height="auto"/></span>
+
 </a>
+<span id="saved"><img src="../src/assets/images/saved.png" width="18%" height="auto"/></span>
 
 
   <div class="jumbotron">
@@ -173,6 +175,22 @@
 
             });
         </script>
+        <script>
+
+		function toggle_visibility(id)
+			{
+			    var e = document.getElementById(id);
+			    if (e.style.display == 'none' || e.style.display=='')
+			    {
+			        e.style.display = 'block';
+			    }
+			    else
+			    {
+			        e.style.display = 'none';
+			    }
+			}
+
+		</script>
 
 
 
