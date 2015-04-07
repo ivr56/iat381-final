@@ -351,6 +351,14 @@ function initScene() {
 	masterContainer.addEventListener( 'click', onClick, true );
 	masterContainer.addEventListener( 'mousewheel', onMouseWheel, false );
 
+	//Touch Events
+	document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);    
+
+
+	//Touch E
 	//	firefox
 	masterContainer.addEventListener( 'DOMMouseScroll', function(e){
 		    var evt=window.event || e; //equalize event object

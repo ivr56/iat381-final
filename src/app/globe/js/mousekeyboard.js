@@ -68,30 +68,30 @@ if (is_touch_device)
 	// listen to events...
 	mc.on("pan", function(ev) {
 		console.log(ev);
-		console.log("Pan Move Left");
-
-		touchDelta = ev.distance;
-		console.log("Distance: " + touchDelta);
-		//Grab Touch Movement
-		touchX = ev.center.x;
-		touchY = ev.center.y;
-
-
-		//Begin Emulation of Move
-		//onDocumentMouseMove(event
-		ptouchX = touchX;
-		ptouchY = touchY;
-
-		touchclientX = ev.pointers[0].clientX;
-		touchclientY = ev.pointers[0].clientY;
-		//console.log("Window X: " + touchclientX + "vs Mouse X: " + touchX);
-		//console.log("Window Y: " + touchclientY + "vs Mouse Y: " + touchY);
-
-		touchX = touchclientX - window.innerWidth * 0.5;
-		touchY = touchclientY - window.innerHeight * 0.5;
-
-		rotateVY += (touchY) / 2 * Math.PI / 180 * 0.3;
-		rotateVX += (touchX) / 2 * Math.PI / 180 * 0.3;
+		console.log("Pan");
+		//
+		// touchDelta = ev.distance;
+		// console.log("Distance: " + touchDelta);
+		// //Grab Touch Movement
+		// touchX = ev.center.x;
+		// touchY = ev.center.y;
+		//
+		//
+		// //Begin Emulation of Move
+		// //onDocumentMouseMove(event
+		// ptouchX = touchX;
+		// ptouchY = touchY;
+		//
+		// touchclientX = ev.pointers[0].clientX;
+		// touchclientY = ev.pointers[0].clientY;
+		// //console.log("Window X: " + touchclientX + "vs Mouse X: " + touchX);
+		// //console.log("Window Y: " + touchclientY + "vs Mouse Y: " + touchY);
+		//
+		// touchX = touchclientX - window.innerWidth * 0.5;
+		// touchY = touchclientY - window.innerHeight * 0.5;
+		//
+		// rotateVY += (touchY) / 2 * Math.PI / 180 * 0.3;
+		// rotateVX += (touchX) / 2 * Math.PI / 180 * 0.3;
 
 
 	});
@@ -125,6 +125,36 @@ if (is_touch_device)
 		console.log("Pinch In Mathed: " + pandelta);
 		handleMWheel(pandelta);
 	});
+
+
+	//Touch Pan Emulation
+	function touchHandler(event)
+{
+    var touches = event.changedTouches,
+        first = touches[0],
+        type = "";
+         switch(event.type)
+    {
+        case "touchstart": type = "mousedown"; break;
+        case "touchmove":  type="mousemove"; break;
+        case "touchend":   type="mouseup"; break;
+        default: return;
+    }
+
+             //initMouseEvent(type, canBubble, cancelable, view, clickCount,
+    //           screenX, screenY, clientX, clientY, ctrlKey,
+    //           altKey, shiftKey, metaKey, button, relatedTarget);
+
+    var simulatedEvent = document.createEvent("MouseEvent");
+    simulatedEvent.initMouseEvent(type, true, true, window, 1,
+                              first.screenX, first.screenY,
+                              first.clientX, first.clientY, false,
+                              false, false, false, 0/*left*/, null);
+
+                                                                                 first.target.dispatchEvent(simulatedEvent);
+    event.preventDefault();
+}
+
 
 
 }
