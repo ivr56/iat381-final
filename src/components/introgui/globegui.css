@@ -118,7 +118,7 @@ font-size:0.8em;
 #homebtn
 {
   width: 20%;
-  float: left;
+  text-align: center;
 
 }
 #oneselect
@@ -131,6 +131,7 @@ font-size:0.8em;
   color: #17A0BF;
   margin-top: 10px;
   margin-bottom: 0px;
+  text-align: center;
 }
 
 #convert_oneselect
@@ -180,4 +181,11 @@ text-align: center;
 
 #nextStep{
   display:none;
+}
+#geoIcon{
+  clear:both;
+  text-align: center;
+  width: 20%;
+  margin-left:auto;
+  margin-right:auto;
 }
