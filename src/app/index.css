@@ -47,6 +47,15 @@ a {
   height:100%;
 }
 
+
+.navbar2 {
+  position: absolute;
+  min-height: 50px;
+  margin-bottom: 20px;
+  width:100%;
+  z-index: 2;
+}
+
 .navbar {
   position: absolute;
   min-height: 50px;
