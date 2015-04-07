@@ -1,0 +1,192 @@
+
+#one {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+.navbar2 {
+  position: absolute;
+  min-height: 50px;
+  margin-bottom: 20px;
+  width:100%;
+  z-index: 2;
+  margin-top: 22em;
+}
+
+.landingContainer{
+
+  border-bottom: white 1px solid;
+  margin-top: 22em;
+  width: 80%;
+  margin-left: 10%;
+  z-index: 4;
+
+
+
+
+}
+
+.landingContainer p{
+
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: white;
+
+}
+
+
+.landingContainer h2{
+
+    color:#2595B7;
+    text-align: left;
+    display: inline-block;
+    margin-left: 30%;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    border-bottom: rgba(0,0,0,0.5) 6px solid;
+    vertical-align: top;
+
+
+
+}
+
+.landingContainer img{
+display: inline-block;
+
+}
+
+.landingButton p{
+
+  color: #fff;
+  margin: 0.5em;
+  text-align: center;
+}
+
+.landingButton {
+
+margin-top: 0em;
+margin-bottom: 1em;
+border: 2px solid white;
+border-radius: 10px;
+width:40%;
+margin-left: 30%;
+
+}
+
+.landingButton2 p{
+
+  color: #fff;
+  margin: 0.5em;
+  text-align: center;
+}
+
+.landingButton2 {
+
+
+margin-bottom: 0em;
+border: 2px solid white;
+border-radius: 10px;
+width:100%;
+margin-left: 70%;
+margin-right:auto;
+font-size:0.8em;
+
+}
+
+
+.countryheader
+{
+  font-size: 18px;
+  color: #fff;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 25px;
+}
+
+
+
+#startbtn
+{
+  margin-top: 0px;
+  display: block;
+}
+
+#one
+{
+  display: block;
+}
+#homebtn
+{
+  width: 20%;
+  text-align: center;
+
+}
+#oneselect
+{
+  float: left;
+  margin-left: 30px;
+  width: 65%;
+  margin-top: 10px;
+  font-size: 24px;
+  color: #17A0BF;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+#convert_oneselect
+{
+  margin-top: 10px;
+    width: 40%;
+    float: left;
+    margin-left: 30px;
+    font-size: 24px;
+
+}
+
+#convert_twoselect
+{
+  margin-top: 10px;
+    width: 40%;
+    float: left;
+    margin-left: 10px;
+    font-size: 24px;
+
+}
+#convertbtn
+{
+  display: none;
+  width: 40%;
+  float: left;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #17A0BF;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+#convertdoms
+{
+  display: none;
+width: 75%;
+float: left;
+margin-top: 10px;
+font-size: 20px;
+color: #17A0BF;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-left: 25px;
+text-align: center;
+}
+
+#nextStep{
+  display:none;
+}
+#geoIcon{
+  clear:both;
+  text-align: center;
+  width: 20%;
+  margin-left:auto;
+  margin-right:auto;
+}

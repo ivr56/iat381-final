@@ -1,0 +1,57 @@
+<div class="navbar2" ng-controller="GlobeCtrl">
+
+  <!-- Button Start for Start-->
+  <!-- Throw Code into js Files -->
+
+  <div id="landingContainer">
+
+
+
+    <div id="one">
+<p class="countryheader">Your Current Country is:</p>
+<h2 id="oneselect">Canada</h2>
+<div id="geoIcon">
+<a id="homebtn" onclick="goHome()">
+<img src="../src/assets/images/icons_09.png" width="100%" height="auto"/>
+</a>
+</div>
+</div>
+
+
+
+    <a id="startbtn" onclick="starting()">
+    <div class="landingButton">
+    <p>Start</p>
+    </div>
+    </a>
+
+<span id="nextStep">
+        <div id="convertdoms">
+    <p class="countryheader">Select the countres that you would like to convert to/from:</p>
+    <h2 id="convert_oneselect">Canada</h2>
+    <h2 id="convert_twoselect">Canada</h2>
+    </div>
+
+
+
+    <a id="convertbtn" onclick="convert()" ng-href="#/convert">
+    <div class="landingButton2">
+    <p>Convert Now</p>
+    </div>
+    </a>
+
+  </span>
+
+  </div>
+
+  <!-- Button Done -->
+  <script>
+  function bang()
+  {
+  console.log("Banged");
+  }
+  </script>
+
+
+
+</div>
