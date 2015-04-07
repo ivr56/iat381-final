@@ -237,6 +237,9 @@ a {
   vertical-align:middle;
 
 }
+.convertContainer{
+  padding-top:50px;
+}
 
 .col1of2{
   width:36%;
@@ -315,7 +318,9 @@ hr {
 }
 
 
-
+#historyheading h1{
+  padding-top:50px;
+}
 .save {
 
 
