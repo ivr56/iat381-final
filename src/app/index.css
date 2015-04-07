@@ -186,7 +186,7 @@ a {
 
 .col1of2{
   width:36%;
-
+  height:100px;
   float:left;
   text-align:center;
 }
@@ -297,7 +297,10 @@ hr {
 .userpanel{
   width: 100%;
 }
-
+.userpanel p{
+  margin:0;
+  padding:0;
+}
 
 .landingContainer{
 
