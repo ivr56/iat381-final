@@ -150,17 +150,38 @@ a {
   line-height: 1.33;
   border-radius: 6px;
 }
+.convertsavedList{
+  width:100%;
+  text-align:left;
+  border-bottom:1px solid #fff;
+  clear:both;
+
+}
+
+.convertsavedList h1{
+  color:#C3C0C2;
+  font-size:1em;
+  text-align:center;
+  width:48%;
+  height:50px;
+  border-bottom:1px solid white;
+}
 .savedList{
   width:100%;
   text-align:left;
   border-bottom:1px solid #fff;
   clear:both;
+  overflow:scroll;
+  height:500px;
 }
+
 .savedList h1{
   color:#C3C0C2;
-  font-size:2.2em;
-  text-align:left;
-  width:40%;
+  font-size:1em;
+  text-align:center;
+  width:48%;
+  height:50px;
+  border-bottom:1px solid white;
 }
 #inCount{
   font-size:0.8em;
@@ -172,24 +193,45 @@ a {
   height:4em;
   color: #2595B7;
 }
+
 .knobDiv{
   padding-left: 1.5em;
 }
 
+#hideInpt{
+  display:none;
+}
+
 .savedList h2{
   color:#2595B7;
-   width:40%;
+   width:48%;
   text-align:center;
   /*margin-left:auto;
   margin-right:auto;*/
   padding-bottom:10px;
+  height:50px;
+  font-size:1em;
+  border-bottom:5px solid #333;
+  vertical-align:middle;
 
+}
+.convertsavedList h2{
+  color:#2595B7;
+   width:48%;
+  text-align:center;
+  /*margin-left:auto;
+  margin-right:auto;*/
+  padding-bottom:10px;
+  height:50px;
+  font-size:1em;
+  border-bottom:5px solid #333;
+  vertical-align:middle;
 
 }
 
 .col1of2{
   width:36%;
-
+  height:100px;
   float:left;
   text-align:center;
 }
@@ -300,7 +342,11 @@ hr {
 .userpanel{
   width: 100%;
 }
-
+.userpanel p{
+  margin:0;
+  padding:0;
+  font-size:0.8em;
+}
 
 .landingContainer{
 
