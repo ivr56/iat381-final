@@ -1,3 +1,7 @@
+//Open Exchange API through AJAX + Custom JS
+//CountryISO Lists from Country.io
+//http://country.io/data/
+
 //Country ISO List
 // var countrydecode = {"countryd": [
 //   {
@@ -875,7 +879,7 @@ function bank()
   console.log("For Converting " + startvalue + fx.settings.from + "(" + ")" + " To " + fx.settings.to + "(" + ")");
   console.log(final);
   //Page Switching
-  
+
 }
 
 

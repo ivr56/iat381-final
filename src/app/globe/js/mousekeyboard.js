@@ -1,3 +1,8 @@
+//HammerJS + Javascript
+//Touchhandler code from Stack Overflow
+//http://stackoverflow.com/questions/1517924/javascript-mapping-touch-events-to-mouse-events
+
+
 var mouseX = 0, mouseY = 0, pmouseX = 0, pmouseY = 0;
 var pressX = 0, pressY = 0;
 
@@ -121,10 +126,6 @@ if (is_touch_device)
         default: return;
 
     }
-
-             //initMouseEvent(type, canBubble, cancelable, view, clickCount,
-    //           screenX, screenY, clientX, clientY, ctrlKey,
-    //           altKey, shiftKey, metaKey, button, relatedTarget);
 
 
     var simulatedEvent = document.createEvent("MouseEvent");

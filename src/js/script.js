@@ -1,3 +1,6 @@
+//IndexDB From sklad
+//SKLAD IndexDB Abstraction Layer
+//http://staypositive.ru/sklad/
 
 var dbName = 'todo_list_store1';
 

@@ -1,3 +1,6 @@
+//Heavily Modified Google DataArts ArmsGlobe
+//http://armsglobe.chromeexperiments.com/
+
 var masterContainer = document.getElementById('visualization');
 
 var overlay = document.getElementById('visualization');
