@@ -65,7 +65,7 @@ display: inline-block;
 
 .landingButton {
 
-margin-top: 3em;
+margin-top: 0em;
 margin-bottom: 1em;
 border: 2px solid white;
 border-radius: 10px;
@@ -84,7 +84,7 @@ margin-left: 30%;
 .landingButton2 {
 
 
-margin-bottom: 1em;
+margin-bottom: 0em;
 border: 2px solid white;
 border-radius: 10px;
 width:100%;
@@ -108,6 +108,7 @@ font-size:0.8em;
 
 #startbtn
 {
+  margin-top: 0px;
   display: block;
 }
 
