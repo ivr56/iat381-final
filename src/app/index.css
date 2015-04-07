@@ -305,11 +305,11 @@ hr {
 .landingContainer{
 
   border-bottom: white 1px solid;
-  margin-top: 33em;
+  margin-top: 26em;
   width: 80%;
   margin-left: 10%;
   z-index: 4;
-  
+
 
 
 
@@ -366,4 +366,3 @@ margin-left: 30%;
 
   min-width: 360px;
 }
-

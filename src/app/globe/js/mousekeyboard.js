@@ -9,7 +9,7 @@ var rotateXMax = 90 * Math.PI/180;
 
 var rotateTargetX = undefined;
 var rotateTargetY = undefined;
-
+var myElement = document.getElementById('hammertime');
 var keyboard = new THREEx.KeyboardState();
 var is_touch_device = 'ontouchstart' in document.documentElement;
 

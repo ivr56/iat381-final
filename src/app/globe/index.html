@@ -31,7 +31,7 @@
 	<body ng-controller="GlobeCtrl" id="dataviz" class="">
 		<div id="wrapper">
 		<div ng-include="'components/navbar/navbarGlobe.html'"></div>
-		
+
 		<!-- <div id="loading">
 			<h2>Loading Small Arms and Ammunition Trade Data from 1992 to 2010. Please wait...</h2>
 		</div> -->
@@ -42,7 +42,6 @@
 			<!--<span id="detailText" class="detail">
 			</span>--></td></tr></table>
 		</div>
-
 		<div id="visualization" >
 			<!-- 2D overlay elements go in here -->
 
@@ -50,29 +49,8 @@
 				<!-- 3D webgl canvas here -->
 			</div>
 		</div>
-		<div class="landingContainer">
+		<div ng-include="'components/introgui/landingcontainer.html'"></div>
 
-<p>Your Current Country is:</p>
-
-<h2>Canada</h2>
-
-<a id="homebtn" onclick="goHome()">
-<img src="../src/assets/images/icons_09.png" width="18%" height="auto"/>
-</a>
-
-        <!-- <button id="startbtn" onclick="starting()">"Start"</button>
-		<button id="homebtn" onclick="goHome()">"Gone Home"</button>
-		<button id="convertbtn" onclick="convert()">"Convert To"</button>
-		<button onclick="p1()">Clicked</button> -->
-
-
-<a ng-href="#/convert" id="convertbtn" onclick="convert()">
-<div class="landingButton">
-	<p>Start</p>
-</div>
-</a>
-
-</div>
 
 
 		<script src="../node_modules/money/money.js"></script>
