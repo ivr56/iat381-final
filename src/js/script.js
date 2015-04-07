@@ -51,7 +51,7 @@ function (err, conn) {
             var $firstAmount = $(document.createElement('h1'));
             var $secCountry = $(document.createElement('h2'));
             var $secAmount = $(document.createElement('h1'));
-            var $time = $(document.createElement('p'));
+            // var $time = $(document.createElement('p'));
             // var $l = $(document.createElement('h2'));
             //if item is done
             // if (todo.value.done) {
@@ -61,7 +61,7 @@ function (err, conn) {
             $firstAmount.text(todo.value.inputAmount);
             $secCountry.text(todo.value.fromCountryName);
             $secAmount.text(todo.value.outcomeAmount);
-            $time.text(todo.value.timestamp);
+            // $time.text(todo.value.timestamp);
             // $li.click (function () {
             //   todo.value.done = true;
             //   conn.upsert('todos', todo.value, function (err){
@@ -69,7 +69,7 @@ function (err, conn) {
             //     updateRows(conn);
             //   })
             // });
-            $list.append($time);
+            // $list.append($time);
             $list.append($firstCountry);
             $list.append($secCountry);
             $list.append($firstAmount);

@@ -23,12 +23,14 @@
     </div>
 
 
-  <div class="savedList">
+  <div class="convertsavedList">
 
    <!-- <p>Spin the dial to select the conversion amount</p> -->
     <div class="col1of2">
     <div class="userpanel">
-	<h2><span id="inCount"></span></h2>
+	<h3>
+    <span id="inCount"></span>
+    </h3>
      <!-- <p id="userinpt">0</p> -->
      </div>
 	</div>
@@ -37,7 +39,7 @@
    </div>
 
    <div class="col1of2">
-     <h2><span id="outCount"></span></h2>
+     <h3><span id="outCount"></span></h3>
     <div class="userpanel">
       <!-- <p id="displayinpt">0</p> -->
       </div>
@@ -46,23 +48,25 @@
     <div class="col1of2">
     <div class="userpanel">
 
-     <p id="userinpt">0</p>
+     <h3><span id="userinpt">0</span></h3>
      </div>
 	</div>
   <div class="col1of4">
-  
+
   </div>
   <div class="col1of2">
   <div class="userpanel">
 
-    <p id="displayinpt">0</p>
+    <h3><span id="displayinpt">0</span></h3>
    </div>
 </div>
     <!-- <div id="description" input='text'></div> -->
-    <!-- <input type='text' id='description'>
+    <div id="hideInpt">
+    <input type='text' id='description'>
    <input type='text' id='inputAmount'>
    <input type='text' id='fromCountryName'>
-   <input type='text' id='outcomeAmount'> -->
+   <input type='text' id='outcomeAmount'>
+ </div>
      <!-- <button  onclick="save()" >Save</button> -->
 
    <!-- <ul id='list'>
@@ -110,7 +114,14 @@
                         document.getElementById("inCount").innerHTML= countrysel_buffer_name;
                         document.getElementById("outCount").innerHTML= countrysel_buffer2_name;
                         document.getElementById("userinpt").innerHTML=value + ' ' + xefrom;
-                        document.getElementById("displayinpt").innerHTML=final.toFixed(2) + ' ' + xeto;
+                        document.getElementById("displayinpt").innerHTML=final.toFixed(0) + ' ' + xeto;
+
+                        document.getElementById('description').value = countrysel_buffer_name;
+                        document.getElementById('inputAmount').value = value + ' ' + xefrom;
+                        document.getElementById('fromCountryName').value = countrysel_buffer2_name;
+                        document.getElementById('outcomeAmount').value = final.toFixed(0) + ' ' + xeto;
+
+
 
 
 
