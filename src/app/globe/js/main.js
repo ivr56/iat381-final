@@ -15,6 +15,9 @@ var countrysel_buffer;
 var countrysel_buffer2;
 
 
+//Check 2
+var converted = 0;
+
 //Home country by geo
 var home;
 var countrysel_buffer_name;
@@ -362,6 +365,12 @@ function initScene() {
   document.addEventListener("touchmove", touchHandler, true);
   document.addEventListener("touchend", touchHandler, false);
   document.addEventListener("touchcancel", touchHandler, true);
+
+	document.getElementById("one").style.display = 'block';
+	document.getElementById("startbtn").style.display = 'block';
+	document.getElementById("convertbtn").style.display = 'none';
+	document.getElementById("convertdoms").style.display = 'none';
+
 }
 
 	//Touch E
@@ -498,13 +507,13 @@ function starting()
 function convertbuffer()
 {
 	console.log("Convert Enabled");
-
+	converted = 1;
 	console.log("Sel 01: " + countrysel_buffer);
 	conversion_a();
 	document.getElementById("one").style.display = 'none';
 	document.getElementById("startbtn").style.display = 'none';
 	document.getElementById("convertbtn").style.display = 'block';
-	document.getElementById("convertcont").style.display = 'block';
+	document.getElementById("convertdoms").style.display = 'block';
 	//Set Highlighting Two Countries
 	//highlightCountry( [countrysel, countrysel_buffer2] );
 	//Show CSS for Button 2
@@ -569,8 +578,13 @@ function highlightCountry( countries){
 	console.log("Highlight Country: " + countries);
 	countrytemp_name = countries;
 	document.getElementById("oneselect").innerHTML = countrytemp_name;
-	document.getElementById("convert_twoselect").innerHTML = countrytemp_name;
-	document.getElementById("convert_oneselect").innerHTML = countrysel_buffer_name;
+
+
+	if (converted === 1)
+	{
+		document.getElementById("convert_twoselect").innerHTML = countrytemp_name;
+		document.getElementById("convert_oneselect").innerHTML = countrysel_buffer_name;
+	}
 	var countryCodes = [];
 	for( var i in countries ){
 		var code = findCode(countries[i]);
