@@ -351,12 +351,17 @@ function initScene() {
 	masterContainer.addEventListener( 'click', onClick, true );
 	masterContainer.addEventListener( 'mousewheel', onMouseWheel, false );
 
+	if (is_touch_device)
+	{
 	//Touch Events
-	document.addEventListener("touchstart", touchHandler, true);
-    document.addEventListener("touchmove", touchHandler, true);
-    document.addEventListener("touchend", touchHandler, true);
-    document.addEventListener("touchcancel", touchHandler, true);    
 
+	//masterContainer.addEventListener( 'click', onClick, true );
+	//document.addEventListener("touchstart", onClick, true);
+	document.addEventListener("touchstart", touchHandler, true);
+  document.addEventListener("touchmove", touchHandler, true);
+  document.addEventListener("touchend", touchHandler, false);
+  document.addEventListener("touchcancel", touchHandler, true);
+}
 
 	//Touch E
 	//	firefox
