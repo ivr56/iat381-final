@@ -48,20 +48,7 @@ a {
 }
 
 
-#one {
-  width: 50%;
-  margin-right: auto;
-  margin-left: auto;
 
-}
-.navbar2 {
-  position: absolute;
-  min-height: 50px;
-  margin-bottom: 20px;
-  width:100%;
-  z-index: 2;
-  margin-top: 26em;
-}
 .navbar {
   position: absolute;
   min-height: 50px;
@@ -368,65 +355,6 @@ hr {
   font-size:0.8em;
 }
 
-.landingContainer{
-
-  border-bottom: white 1px solid;
-  margin-top: 26em;
-  width: 80%;
-  margin-left: 10%;
-  z-index: 4;
-
-
-
-
-}
-
-.landingContainer p{
-
-  text-align: center;
-  margin-bottom: 0.5em;
-  color: white;
-
-}
-
-
-.landingContainer h2{
-
-    color:#2595B7;
-    text-align: left;
-    display: inline-block;
-    margin-left: 30%;
-    margin-top: 0.5em;
-    margin-bottom: 0;
-    border-bottom: rgba(0,0,0,0.5) 6px solid;
-    vertical-align: top;
-
-
-
-}
-
-.landingContainer img{
-display: inline-block;
-
-}
-
-.landingButton p{
-
-  color: #fff;
-  margin: 0.5em;
-  text-align: center;
-}
-
-.landingButton {
-
-margin-top: 1.5em;
-margin-bottom: 1em;
-border: 2px solid white;
-border-radius: 10px;
-width:40%;
-margin-left: 30%;
-
-}
 
 #wrapper {
 

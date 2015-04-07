@@ -85,6 +85,16 @@ margin-left: 30%;
 }
 
 
+
+#startbtn
+{
+  display: block;
+}
+
+#one
+{
+  display: block;
+}
 #homebtn
 {
   width: 20%;
@@ -101,4 +111,38 @@ margin-left: 30%;
   color: #17A0BF;
   margin-top: 10px;
   margin-bottom: 0px;
+}
+
+#convert_oneselect
+{
+  width: 50%;
+}
+
+#convert_twoselect
+{
+
+}
+#convertbtn
+{
+  display: none;
+  width: 40%;
+  float: left;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #17A0BF;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+#convertcont
+{
+  display: none;
+  width: 40%;
+  float: left;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #17A0BF;
+  margin-top: 10px;
+  margin-bottom: 0px;
+
 }

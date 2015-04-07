@@ -501,7 +501,10 @@ function convertbuffer()
 
 	console.log("Sel 01: " + countrysel_buffer);
 	conversion_a();
-
+	document.getElementById("one").style.display = 'none';
+	document.getElementById("startbtn").style.display = 'none';
+	document.getElementById("convertbtn").style.display = 'block';
+	document.getElementById("convertcont").style.display = 'block';
 	//Set Highlighting Two Countries
 	//highlightCountry( [countrysel, countrysel_buffer2] );
 	//Show CSS for Button 2
@@ -566,6 +569,8 @@ function highlightCountry( countries){
 	console.log("Highlight Country: " + countries);
 	countrytemp_name = countries;
 	document.getElementById("oneselect").innerHTML = countrytemp_name;
+	document.getElementById("convert_twoselect").innerHTML = countrytemp_name;
+	document.getElementById("convert_oneselect").innerHTML = countrysel_buffer_name;
 	var countryCodes = [];
 	for( var i in countries ){
 		var code = findCode(countries[i]);
