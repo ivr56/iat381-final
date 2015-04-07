@@ -48,14 +48,20 @@ a {
 }
 
 
+#one {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+
+}
 .navbar2 {
   position: absolute;
   min-height: 50px;
   margin-bottom: 20px;
   width:100%;
   z-index: 2;
+  margin-top: 26em;
 }
-
 .navbar {
   position: absolute;
   min-height: 50px;

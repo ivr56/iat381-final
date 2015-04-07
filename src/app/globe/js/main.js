@@ -279,6 +279,7 @@ function initScene() {
 	sphere.rotation.y = -Math.PI/2;
 	sphere.rotation.z = Math.PI;
 	sphere.id = "base";
+	sphere.position.y = 40;
 	rotating.add( sphere );
 
 
@@ -486,6 +487,9 @@ function starting()
 	console.log("Selection: " + countrytemp);
 	countrysel_buffer = countrytemp;
 	countrysel_buffer_name = countrytemp_name;
+
+	//Change DOM Element
+
 	console.log("Selection Code: " + countrysel_buffer + " Name:" + countrysel_buffer_name);
 	convertbuffer();
 
@@ -561,6 +565,7 @@ function highlightCountry( countries){
 
 	console.log("Highlight Country: " + countries);
 	countrytemp_name = countries;
+	document.getElementById("oneselect").innerHTML = countrytemp_name;
 	var countryCodes = [];
 	for( var i in countries ){
 		var code = findCode(countries[i]);
