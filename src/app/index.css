@@ -48,11 +48,12 @@ a {
 }
 
 .navbar {
-  position: relative;
+  position: absolute;
   min-height: 50px;
   margin-bottom: 20px;
   background-color: #fff;
   width:100%;
+  z-index: 2;
 }
 
 .navbar > a {
@@ -302,9 +303,13 @@ hr {
 .landingContainer{
 
   border-bottom: white 1px solid;
-  margin-top: 21em;
+  margin-top: 33em;
   width: 80%;
   margin-left: 10%;
+  z-index: 4;
+  
+
+
 
 }
 
@@ -312,6 +317,7 @@ hr {
 
   text-align: center;
   margin-bottom: 0.5em;
+  color: white;
 
 }
 
@@ -322,7 +328,8 @@ hr {
     text-align: left;
     display: inline-block;
     margin-left: 30%;
-    margin-top: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0;
     border-bottom: rgba(0,0,0,0.5) 6px solid;
     vertical-align: top;
 
@@ -352,3 +359,9 @@ width:40%;
 margin-left: 30%;
 
 }
+
+#wrapper {
+
+  min-width: 360px;
+}
+
