@@ -502,6 +502,17 @@ function starting()
 	console.log("Selection Code: " + countrysel_buffer + " Name:" + countrysel_buffer_name);
 	convertbuffer();
 
+	//display next step
+	var e = document.getElementById('nextStep');
+	if (e.style.display == 'none' || e.style.display=='')
+	{
+			e.style.display = 'block';
+	}
+	else
+	{
+			e.style.display = 'none';
+	}
+
 }
 
 function convertbuffer()
