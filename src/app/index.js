@@ -79,5 +79,5 @@ angular.module('toDo',[])
 function makeitrain()
 {
   console.log("Page Ready");
-
+  document.getElementById("splash").style.visibility = "visible";
 }

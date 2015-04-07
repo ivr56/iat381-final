@@ -125,6 +125,7 @@ var assetList = [];
 //	use underscore and ".after" to load these in order
 //	don't look at me I'm ugly
 function start( e ){
+	console.log(document.getElementById("splash").style.visibility);
 	//	detect for webgl and reject everything else
 	if ( ! Detector.webgl ) {
 		Detector.addGetWebGLMessage();
@@ -160,7 +161,7 @@ function start( e ){
 
 var Selection = function(){
 	this.selectedYear = '2010';
-	this.selectedCountry = 'UNITED STATES';
+	this.selectedCountry = 'CANADA';
 	//countriesfilled = countriesfilled + 1;
 	//console.log("Counter: " + countriesfilled);
 	// this.showExports = true;
@@ -323,7 +324,7 @@ function initScene() {
 	buildGUI();
 
 	//selectVisualization( timeBins, '2010', ['UNITED STATES'], ['Military Weapons','Civilian Weapons', 'Ammunition'], ['Military Weapons','Civilian Weapons', 'Ammunition'] );
-	selectVisualization( timeBins, '2010', ['UNITED STATES']);
+	selectVisualization( timeBins, '2010', ['CANADA']);
 
 		// test for highlighting specific countries
 	//highlightCountry( ["UNITED STATES", "CANADA", "CHINA"] );
