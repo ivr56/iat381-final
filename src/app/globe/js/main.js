@@ -1,5 +1,7 @@
 //Heavily Modified Google DataArts ArmsGlobe
 //http://armsglobe.chromeexperiments.com/
+//We primarily stripped out everything we did not need from the original and kept the bare bones.
+//Code not needed was commented out (for debgging) or deleted
 //Our new custom logic additions are starting(), goHome(), convertbuffer(), covnert() and goHome()
 
 var masterContainer = document.getElementById('visualization');
