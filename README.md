@@ -8,16 +8,17 @@ ivr56.github.io/iat381-final/
 - Browser View scale window down to Nexus 5 viewport size. Do not use mobile emulation or it will disable some mouse controls).
 
 
-IAT381 Final Project 
+IAT 381 Final Project 
 --------------
 Mobile Application Development
-- Ivor Sangala
-- Irene Wang
-- Sean Warwick
+
+- Ivor Sangala (Backend)
+- Irene Wang (Front-End and Back-End)
+- Sean Warwick (Front-End)
 
 
 
-Built With
+Built Ontop of
 --------------
 - http://armsglobe.chromeexperiments.com/
 - http://github.com/dataarts/armsglobe
