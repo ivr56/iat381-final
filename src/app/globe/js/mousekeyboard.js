@@ -1,3 +1,7 @@
+//Part of the code from http://armsglobe.chromeexperiments.com/
+//We primarily stripped out everything we did not need from the original and kept the bare bones.
+//Code not needed was commented out (for debgging) or deleted
+//Our additions were HamemrJs and all Touch Controls
 //HammerJS + Javascript
 //Touchhandler code from Stack Overflow
 //http://stackoverflow.com/questions/1517924/javascript-mapping-touch-events-to-mouse-events

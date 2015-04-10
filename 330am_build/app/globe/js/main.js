@@ -525,6 +525,7 @@ function convertbuffer()
 	converted = 1;
 	console.log("Sel 01: " + countrysel_buffer);
 	conversion_a();
+	document.getElementById("convert_oneselect").innerHTML = countrysel_buffer_name;
 	document.getElementById("one").style.display = 'none';
 	document.getElementById("startbtn").style.display = 'none';
 	document.getElementById("convertbtn").style.display = 'block';
@@ -593,7 +594,9 @@ function highlightCountry( countries){
 	console.log("Highlight Country: " + countries);
 	countrytemp_name = countries;
 	document.getElementById("oneselect").innerHTML = countrytemp_name;
+	document.getElementById("convert_oneselect").innerHTML = countrysel_buffer_name;
 
+		document.getElementById("convert_twoselect").innerHTML = "None Selected";
 
 	if (converted === 1)
 	{

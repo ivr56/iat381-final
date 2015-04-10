@@ -1,3 +1,6 @@
+//Part of the code from http://armsglobe.chromeexperiments.com/
+//We primarily stripped out everything we did not need from the original and kept the bare bones.
+//Code not needed was commented out (for debgging) or deleted
 function loadWorldPins( callback ){
 	// We're going to ask a file for the JSON data.
 	xhr = new XMLHttpRequest();

@@ -1,5 +1,6 @@
 //Heavily Modified Google DataArts ArmsGlobe
 //http://armsglobe.chromeexperiments.com/
+//Our new custom logic additions are starting(), goHome(), convertbuffer(), covnert() and goHome()
 
 var masterContainer = document.getElementById('visualization');
 
@@ -498,8 +499,7 @@ function animate() {
 function starting()
 {
 	console.log("Selection: " + countrytemp);
-	countrysel_buffer = countrytemp;
-	countrysel_buffer_name = countrytemp_name;
+
 
 	//Change DOM Element
 
@@ -521,10 +521,14 @@ function starting()
 
 function convertbuffer()
 {
+	countrysel_buffer = countrytemp;
+	countrysel_buffer_name = countrytemp_name;
 	console.log("Convert Enabled");
+	console.log("Convert From: " + countrysel_buffer_name);
 	converted = 1;
 	console.log("Sel 01: " + countrysel_buffer);
 	conversion_a();
+	document.getElementById("convert_oneselect").innerHTML = countrysel_buffer_name;
 	document.getElementById("one").style.display = 'none';
 	document.getElementById("startbtn").style.display = 'none';
 	document.getElementById("convertbtn").style.display = 'block';
@@ -594,6 +598,7 @@ function highlightCountry( countries){
 	countrytemp_name = countries;
 	document.getElementById("oneselect").innerHTML = countrytemp_name;
 
+	document.getElementById("convert_twoselect").innerHTML = "None Selected";
 
 	if (converted === 1)
 	{
