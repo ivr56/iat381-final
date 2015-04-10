@@ -819,22 +819,14 @@ function conversion_b()
 
   choice_b = countrysel_buffer2;
   choice_b_code = currencylookuptable[ choice_b ];
-  console.log("Result for Selection 2: " + choice_b);
-  console.log("Currency Look Up for Selection 2: " + choice_b_code);
-  console.log("Selection 01 Code: " + countrysel_buffer + " Selection 01 Name: " + countrysel_buffer_name);
-  console.log("Selection 02 Code: " + countrysel_buffer2  + " Selection 02 Name: " + countrysel_buffer2_name);
-  console.log("Convert From: " + choice_a_code + "  To:  " + choice_b_code);
-
-
-
 
   //Set Temporary Storage before Swap
   xefrom = choice_a_code;
   xeto = choice_b_code;
   //Send to Bank to be Converted
-
-
   bank();
+
+
 
 
 }
