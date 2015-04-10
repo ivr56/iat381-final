@@ -3,7 +3,7 @@ Currency Conversion Globe
 
 Bringing a new experience to the mundane world of currency conversion applications.
 
-ivr56.github.io/iat381-final/
+<a href="ivr56.github.io/iat381-final/">View Demo</a>
 - 1080p Android Chrome or Better Only viewed best on Nexus 5.
 - Browser View scale window down to Nexus 5 viewport size. Do not use mobile emulation or it will disable some mouse controls).
 
